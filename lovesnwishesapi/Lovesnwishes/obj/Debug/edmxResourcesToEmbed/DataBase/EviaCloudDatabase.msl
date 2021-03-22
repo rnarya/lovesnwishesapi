@@ -1,0 +1,1288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TDEVOV2ModelStoreContainer" CdmEntityContainer="TDEVOV2Entities">
+    <EntitySetMapping Name="ELMAH_Error">
+      <EntityTypeMapping TypeName="TDEVOV2Model.ELMAH_Error">
+        <MappingFragment StoreEntitySet="ELMAH_Error">
+          <ScalarProperty Name="ErrorId" ColumnName="ErrorId" />
+          <ScalarProperty Name="Application" ColumnName="Application" />
+          <ScalarProperty Name="Host" ColumnName="Host" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="TimeUtc" ColumnName="TimeUtc" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="AllXml" ColumnName="AllXml" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IPDatas">
+      <EntityTypeMapping TypeName="TDEVOV2Model.IPData">
+        <MappingFragment StoreEntitySet="IPData">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StartRange" ColumnName="StartRange" />
+          <ScalarProperty Name="EndRange" ColumnName="EndRange" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="TDEVOV2Model.Log">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Thread" ColumnName="Thread" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Logger" ColumnName="Logger" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Exception" ColumnName="Exception" />
+          <ScalarProperty Name="HostName" ColumnName="HostName" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="Origin" ColumnName="Origin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmailAttachments">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEmailAttachment">
+        <MappingFragment StoreEntitySet="tblEmailAttachment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmailsentId" ColumnName="EmailsentId" />
+          <ScalarProperty Name="Attachment" ColumnName="Attachment" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOAboutFeatures">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOAboutFeature">
+        <MappingFragment StoreEntitySet="tblEVOAboutFeature">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOAddOns">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOAddOn">
+        <MappingFragment StoreEntitySet="tblEVOAddOn">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOAddOnTypes">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOAddOnType">
+        <MappingFragment StoreEntitySet="tblEVOAddOnType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOApiUsers">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOApiUser">
+        <MappingFragment StoreEntitySet="tblEVOApiUsers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOBroadcastLocations">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOBroadcastLocation">
+        <MappingFragment StoreEntitySet="tblEVOBroadcastLocation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOBulkInviteUploads">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOBulkInviteUpload">
+        <MappingFragment StoreEntitySet="tblEVOBulkInviteUpload">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FileUploaded" ColumnName="FileUploaded" />
+          <ScalarProperty Name="IfPassword" ColumnName="IfPassword" />
+          <ScalarProperty Name="IfEmail" ColumnName="IfEmail" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOCDNPlayers">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOCDNPlayer">
+        <MappingFragment StoreEntitySet="tblEVOCDNPlayer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PlayerUrl" ColumnName="PlayerUrl" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOCDNProviders">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOCDNProvider">
+        <MappingFragment StoreEntitySet="tblEVOCDNProvider">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="CDNPathSecure" ColumnName="CDNPathSecure" />
+          <ScalarProperty Name="CDNPathUnsecure" ColumnName="CDNPathUnsecure" />
+          <ScalarProperty Name="CDNKey1" ColumnName="CDNKey1" />
+          <ScalarProperty Name="CDNKey2" ColumnName="CDNKey2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOChats">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOChat">
+        <MappingFragment StoreEntitySet="tblEVOChat">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ChatType" ColumnName="ChatType" />
+          <ScalarProperty Name="KeyId" ColumnName="KeyId" />
+          <ScalarProperty Name="EVOLibraryID" ColumnName="EVOLibraryID" />
+          <ScalarProperty Name="EVOMediaId" ColumnName="EVOMediaId" />
+          <ScalarProperty Name="ChatOrder" ColumnName="ChatOrder" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="EVOEventId" ColumnName="EVOEventId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsApprovalRequired" ColumnName="IsApprovalRequired" />
+          <ScalarProperty Name="Network" ColumnName="Network" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOChatMessages">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOChatMessage">
+        <MappingFragment StoreEntitySet="tblEVOChatMessage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="IsBroadcast" ColumnName="IsBroadcast" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="ParentMessageId" ColumnName="ParentMessageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOCities">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOCity">
+        <MappingFragment StoreEntitySet="tblEVOCity">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOContactUs">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOContactU">
+        <MappingFragment StoreEntitySet="tblEVOContactUs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOCountries">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOCountry">
+        <MappingFragment StoreEntitySet="tblEVOCountry">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOCustomResources">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOCustomResource">
+        <MappingFragment StoreEntitySet="tblEVOCustomResource">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOEmailSents">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOEmailSent">
+        <MappingFragment StoreEntitySet="tblEVOEmailSent">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SentOn" ColumnName="SentOn" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsHtml" ColumnName="IsHtml" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOEmailSentToInvites">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOEmailSentToInvite">
+        <MappingFragment StoreEntitySet="tblEVOEmailSentToInvite">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SentOn" ColumnName="SentOn" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsHtml" ColumnName="IsHtml" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOEmailTemplates">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOEmailTemplate">
+        <MappingFragment StoreEntitySet="tblEVOEmailTemplate">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOEventTracks">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOEventTrack">
+        <MappingFragment StoreEntitySet="tblEVOEventTracks">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TrackName" ColumnName="TrackName" />
+          <ScalarProperty Name="EVOEventID" ColumnName="EVOEventID" />
+          <ScalarProperty Name="EVOMediaID" ColumnName="EVOMediaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOEventVisitUserLocations">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOEventVisitUserLocation">
+        <MappingFragment StoreEntitySet="tblEVOEventVisitUserLocation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EVOUserId" ColumnName="EVOUserId" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Device" ColumnName="Device" />
+          <ScalarProperty Name="Browser" ColumnName="Browser" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="VisitDateTime" ColumnName="VisitDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOFAQs">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOFAQ">
+        <MappingFragment StoreEntitySet="tblEVOFAQ">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="VideoUrl" ColumnName="VideoUrl" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOFavorites">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOFavorite">
+        <MappingFragment StoreEntitySet="tblEVOFavorite">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MediaId" ColumnName="MediaId" />
+          <ScalarProperty Name="EVOEventId" ColumnName="EVOEventId" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOFeatures">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOFeature">
+        <MappingFragment StoreEntitySet="tblEVOFeature">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOPackageID" ColumnName="EVOPackageID" />
+          <ScalarProperty Name="EVOStatusID" ColumnName="EVOStatusID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="HasValue" ColumnName="HasValue" />
+          <ScalarProperty Name="ShowAboutPage" ColumnName="ShowAboutPage" />
+          <ScalarProperty Name="FeatureView" ColumnName="FeatureView" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOFollowings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOFollowing">
+        <MappingFragment StoreEntitySet="tblEVOFollowing">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="EVOEventID" ColumnName="EVOEventID" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="LastSeenDate" ColumnName="LastSeenDate" />
+          <ScalarProperty Name="IsInvited" ColumnName="IsInvited" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOFonts">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOFont">
+        <MappingFragment StoreEntitySet="tblEVOFonts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FontName" ColumnName="FontName" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOHeroContents">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOHeroContent">
+        <MappingFragment StoreEntitySet="tblEVOHeroContent">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          <ScalarProperty Name="ContentDetail" ColumnName="ContentDetail" />
+          <ScalarProperty Name="EVOEventID" ColumnName="EVOEventID" />
+          <ScalarProperty Name="EVOLibraryID" ColumnName="EVOLibraryID" />
+          <ScalarProperty Name="MediaID" ColumnName="MediaID" />
+          <ScalarProperty Name="CDNID" ColumnName="CDNID" />
+          <ScalarProperty Name="CDNPlayerId" ColumnName="CDNPlayerId" />
+          <ScalarProperty Name="OpenUrl" ColumnName="OpenUrl" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOLibraries">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOLibrary">
+        <MappingFragment StoreEntitySet="tblEVOLibrary">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SmallHeaderImg" ColumnName="SmallHeaderImg" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOLibraryEvents">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOLibraryEvent">
+        <MappingFragment StoreEntitySet="tblEVOLibraryEvent">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOLibraryID" ColumnName="EVOLibraryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="LargeHeaderImg" ColumnName="LargeHeaderImg" />
+          <ScalarProperty Name="SmallHeaderImg" ColumnName="SmallHeaderImg" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="EventState" ColumnName="EventState" />
+          <ScalarProperty Name="ViewType" ColumnName="ViewType" />
+          <ScalarProperty Name="IsApprovalRequired" ColumnName="IsApprovalRequired" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="PublishTime" ColumnName="PublishTime" />
+          <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+          <ScalarProperty Name="PreviousEventState" ColumnName="PreviousEventState" />
+          <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
+          <ScalarProperty Name="IsShareHide" ColumnName="IsShareHide" />
+          <ScalarProperty Name="AccessCode" ColumnName="AccessCode" />
+          <ScalarProperty Name="EmailWorkDomain" ColumnName="EmailWorkDomain" />
+          <ScalarProperty Name="WelcomeText" ColumnName="WelcomeText" />
+          <ScalarProperty Name="SignInImage" ColumnName="SignInImage" />
+          <ScalarProperty Name="AllowConcurrentAccess" ColumnName="AllowConcurrentAccess" />
+          <ScalarProperty Name="IsLinkedInAccess" ColumnName="IsLinkedInAccess" />
+          <ScalarProperty Name="IsCompanyName" ColumnName="IsCompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOMedias">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOMedia">
+        <MappingFragment StoreEntitySet="tblEVOMedia">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MediaID" ColumnName="MediaID" />
+          <ScalarProperty Name="EVOEventID" ColumnName="EVOEventID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ThumbnailImage" ColumnName="ThumbnailImage" />
+          <ScalarProperty Name="CDNProviderID" ColumnName="CDNProviderID" />
+          <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Webcast" ColumnName="Webcast" />
+          <ScalarProperty Name="WebcastingURL" ColumnName="WebcastingURL" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="OriginalMediaId" ColumnName="OriginalMediaId" />
+          <ScalarProperty Name="MediaTag" ColumnName="MediaTag" />
+          <ScalarProperty Name="MediaUploadType" ColumnName="MediaUploadType" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="TrimmedFileSize" ColumnName="TrimmedFileSize" />
+          <ScalarProperty Name="LiveStreamStartDate" ColumnName="LiveStreamStartDate" />
+          <ScalarProperty Name="LiveStreamEndDate" ColumnName="LiveStreamEndDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="BroadCastLocation" ColumnName="BroadCastLocation" />
+          <ScalarProperty Name="LiveStreamId" ColumnName="LiveStreamId" />
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="StreamName" ColumnName="StreamName" />
+          <ScalarProperty Name="ServerUrl" ColumnName="ServerUrl" />
+          <ScalarProperty Name="IsDownload" ColumnName="IsDownload" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="IsLegacy" ColumnName="IsLegacy" />
+          <ScalarProperty Name="InputAssetId" ColumnName="InputAssetId" />
+          <ScalarProperty Name="OutputAssetId" ColumnName="OutputAssetId" />
+          <ScalarProperty Name="PlaybackUrl" ColumnName="PlaybackUrl" />
+          <ScalarProperty Name="OriginalOutputAssetId" ColumnName="OriginalOutputAssetId" />
+          <ScalarProperty Name="OriginalPlaybackUrl" ColumnName="OriginalPlaybackUrl" />
+          <ScalarProperty Name="IsSessionVideoUnavailable" ColumnName="IsSessionVideoUnavailable" />
+          <ScalarProperty Name="CaptionsUrl" ColumnName="CaptionsUrl" />
+          <ScalarProperty Name="VideoIndexerID" ColumnName="VideoIndexerID" />
+          <ScalarProperty Name="IsImported" ColumnName="IsImported" />
+          <ScalarProperty Name="EviaCMSMediaID" ColumnName="EviaCMSMediaID" />
+          <ScalarProperty Name="EviaCMSOrgID" ColumnName="EviaCMSOrgID" />
+          <ScalarProperty Name="EviaCMSSecretKey" ColumnName="EviaCMSSecretKey" />
+          <ScalarProperty Name="IsQRCode" ColumnName="IsQRCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOMediaApproverMappings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOMediaApproverMapping">
+        <MappingFragment StoreEntitySet="tblEVOMediaApproverMapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EVOMediaId" ColumnName="EVOMediaId" />
+          <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyOn" ColumnName="ModifyOn" />
+          <ScalarProperty Name="DateRequested" ColumnName="DateRequested" />
+          <ScalarProperty Name="ApprovalRequester" ColumnName="ApprovalRequester" />
+          <ScalarProperty Name="EVOUserId" ColumnName="EVOUserId" />
+          <ScalarProperty Name="NotificationSent" ColumnName="NotificationSent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOMediaCustomFields">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOMediaCustomField">
+        <MappingFragment StoreEntitySet="tblEVOMediaCustomField">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EVOMediaId" ColumnName="EVOMediaId" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="FieldValue" ColumnName="FieldValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOMediaDownloadTrackings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOMediaDownloadTracking">
+        <MappingFragment StoreEntitySet="tblEVOMediaDownloadTracking">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="MediaResourceId" ColumnName="MediaResourceId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOMediaResources">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOMediaResource">
+        <MappingFragment StoreEntitySet="tblEVOMediaResource">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOMediaID" ColumnName="EVOMediaID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="CDNId" ColumnName="CDNId" />
+          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+          <ScalarProperty Name="MediaSize" ColumnName="MediaSize" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOMediaTrackings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOMediaTracking">
+        <MappingFragment StoreEntitySet="tblEVOMediaTracking">
+          <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="EVOMediaId" ColumnName="EVOMediaId" />
+          <ScalarProperty Name="ViewState" ColumnName="ViewState" />
+          <ScalarProperty Name="ViewedDate" ColumnName="ViewedDate" />
+          <ScalarProperty Name="Device" ColumnName="Device" />
+          <ScalarProperty Name="Browser" ColumnName="Browser" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOMediaTypes">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOMediaType">
+        <MappingFragment StoreEntitySet="tblEVOMediaType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVONotifications">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVONotification">
+        <MappingFragment StoreEntitySet="tblEVONotification">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="EVOLibraryID" ColumnName="EVOLibraryID" />
+          <ScalarProperty Name="EVONotificationTypeId" ColumnName="EVONotificationTypeId" />
+          <ScalarProperty Name="EVOEventID" ColumnName="EVOEventID" />
+          <ScalarProperty Name="HeadingText" ColumnName="HeadingText" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="EVOMediaId" ColumnName="EVOMediaId" />
+          <ScalarProperty Name="EVOSpeakerId" ColumnName="EVOSpeakerId" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVONotificationTypes">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVONotificationType">
+        <MappingFragment StoreEntitySet="tblEVONotificationType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />
+          <ScalarProperty Name="ThumbnailImage" ColumnName="ThumbnailImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPackages">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPackage">
+        <MappingFragment StoreEntitySet="tblEVOPackage">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOStatusID" ColumnName="EVOStatusID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SubHeading" ColumnName="SubHeading" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPackageFeatures">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPackageFeature">
+        <MappingFragment StoreEntitySet="tblEVOPackageFeature">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPackageFeatureMappings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPackageFeatureMapping">
+        <MappingFragment StoreEntitySet="tblEVOPackageFeatureMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="FeatureId" ColumnName="FeatureId" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPackagePermissions">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPackagePermission">
+        <MappingFragment StoreEntitySet="tblEVOPackagePermission">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPackageUpgradeRequests">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPackageUpgradeRequest">
+        <MappingFragment StoreEntitySet="tblEVOPackageUpgradeRequest">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPayments">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPayment">
+        <MappingFragment StoreEntitySet="tblEVOPayment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserPackageID" ColumnName="UserPackageID" />
+          <ScalarProperty Name="PromoCodeID" ColumnName="PromoCodeID" />
+          <ScalarProperty Name="PaymentTypeID" ColumnName="PaymentTypeID" />
+          <ScalarProperty Name="TransId" ColumnName="TransId" />
+          <ScalarProperty Name="AddOnQty" ColumnName="AddOnQty" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ProfileID" ColumnName="ProfileID" />
+          <ScalarProperty Name="PNRef" ColumnName="PNRef" />
+          <ScalarProperty Name="TransResult" ColumnName="TransResult" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="NextBillingDate" ColumnName="NextBillingDate" />
+          <ScalarProperty Name="SalesTaxID" ColumnName="SalesTaxID" />
+          <ScalarProperty Name="IsRecurring" ColumnName="IsRecurring" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPaymentTypes">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPaymentType">
+        <MappingFragment StoreEntitySet="tblEVOPaymentType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPolls">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPoll">
+        <MappingFragment StoreEntitySet="tblEVOPoll">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="EVOMediaID" ColumnName="EVOMediaID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPollOptions">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPollOption">
+        <MappingFragment StoreEntitySet="tblEVOPollOption">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EVOPollId" ColumnName="EVOPollId" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPollResults">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPollResult">
+        <MappingFragment StoreEntitySet="tblEVOPollResult">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EVOPollId" ColumnName="EVOPollId" />
+          <ScalarProperty Name="EVOPollOptionId" ColumnName="EVOPollOptionId" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPricings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPricing">
+        <MappingFragment StoreEntitySet="tblEVOPricing">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOFeatureID" ColumnName="EVOFeatureID" />
+          <ScalarProperty Name="EVOPackageID" ColumnName="EVOPackageID" />
+          <ScalarProperty Name="EVOTemplateID" ColumnName="EVOTemplateID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPromoCodes">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPromoCode">
+        <MappingFragment StoreEntitySet="tblEVOPromoCode">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOPurchaseOrders">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOPurchaseOrder">
+        <MappingFragment StoreEntitySet="tblEVOPurchaseOrder">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="StartFrom" ColumnName="StartFrom" />
+          <ScalarProperty Name="ExpireOn" ColumnName="ExpireOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVORatings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVORating">
+        <MappingFragment StoreEntitySet="tblEVORating">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="EVOMediaId" ColumnName="EVOMediaId" />
+          <ScalarProperty Name="RatingDate" ColumnName="RatingDate" />
+          <ScalarProperty Name="RateCount" ColumnName="RateCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEvoSalesTaxRates">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEvoSalesTaxRate">
+        <MappingFragment StoreEntitySet="tblEvoSalesTaxRate">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="UserPackageId" ColumnName="UserPackageId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOShareTrackings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOShareTracking">
+        <MappingFragment StoreEntitySet="tblEVOShareTracking">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EVOMediaId" ColumnName="EVOMediaId" />
+          <ScalarProperty Name="EVOEventId" ColumnName="EVOEventId" />
+          <ScalarProperty Name="EVOLibraryID" ColumnName="EVOLibraryID" />
+          <ScalarProperty Name="ShareFrom" ColumnName="ShareFrom" />
+          <ScalarProperty Name="SocialMediaType" ColumnName="SocialMediaType" />
+          <ScalarProperty Name="ShareDate" ColumnName="ShareDate" />
+          <ScalarProperty Name="MediaViewState" ColumnName="MediaViewState" />
+          <ScalarProperty Name="EVOUserId" ColumnName="EVOUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOSlideImageResources">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOSlideImageResource">
+        <MappingFragment StoreEntitySet="tblEVOSlideImageResource">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ActionPerformed" ColumnName="ActionPerformed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOSpeakers">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOSpeaker">
+        <MappingFragment StoreEntitySet="tblEVOSpeaker">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProfileImageUrl" ColumnName="ProfileImageUrl" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="LinkedIn" ColumnName="LinkedIn" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="GooglePlus" ColumnName="GooglePlus" />
+          <ScalarProperty Name="ThumbnailImage" ColumnName="ThumbnailImage" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Yammer" ColumnName="Yammer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOSpeakerEventMappings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOSpeakerEventMapping">
+        <MappingFragment StoreEntitySet="tblEVOSpeakerEventMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOEventID" ColumnName="EVOEventID" />
+          <ScalarProperty Name="EVOSpeakerID" ColumnName="EVOSpeakerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOSpeakerMediaMappings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOSpeakerMediaMapping">
+        <MappingFragment StoreEntitySet="tblEVOSpeakerMediaMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOMediaID" ColumnName="EVOMediaID" />
+          <ScalarProperty Name="EVOSpeakerID" ColumnName="EVOSpeakerID" />
+          <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOStates">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOState">
+        <MappingFragment StoreEntitySet="tblEVOState">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOStatus">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOStatu">
+        <MappingFragment StoreEntitySet="tblEVOStatus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOSubscriptionCancelRequests">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOSubscriptionCancelRequest">
+        <MappingFragment StoreEntitySet="tblEVOSubscriptionCancelRequest">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserPackageID" ColumnName="UserPackageID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CancellationType" ColumnName="CancellationType" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="RenewDate" ColumnName="RenewDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOThemeCustomizations">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOThemeCustomization">
+        <MappingFragment StoreEntitySet="tblEVOThemeCustomization">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+          <ScalarProperty Name="LibraryTheme" ColumnName="LibraryTheme" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EventTheme" ColumnName="EventTheme" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedUserId" ColumnName="CreatedUserId" />
+          <ScalarProperty Name="ModifiedUserId" ColumnName="ModifiedUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOThemePreviews">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOThemePreview">
+        <MappingFragment StoreEntitySet="tblEVOThemePreview">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+          <ScalarProperty Name="LibraryTheme" ColumnName="LibraryTheme" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EventTheme" ColumnName="EventTheme" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedUserId" ColumnName="CreatedUserId" />
+          <ScalarProperty Name="ModifiedUserId" ColumnName="ModifiedUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOTimeZones">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOTimeZone">
+        <MappingFragment StoreEntitySet="tblEVOTimeZones">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StandardName" ColumnName="StandardName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="TimeSpan_Minutes" ColumnName="TimeSpan_Minutes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOTimeZonesWinters">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOTimeZonesWinter">
+        <MappingFragment StoreEntitySet="tblEVOTimeZonesWinter">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StandardName" ColumnName="StandardName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="TimeSpan_Minutes" ColumnName="TimeSpan_Minutes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOUsers">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOUser">
+        <MappingFragment StoreEntitySet="tblEVOUser">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOTimeZoneID" ColumnName="EVOTimeZoneID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="LastLoggedIn" ColumnName="LastLoggedIn" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="IsTempPwd" ColumnName="IsTempPwd" />
+          <ScalarProperty Name="NotificationReadDate" ColumnName="NotificationReadDate" />
+          <ScalarProperty Name="AllowNameToView" ColumnName="AllowNameToView" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="IsChatDisabled" ColumnName="IsChatDisabled" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="HashValue" ColumnName="HashValue" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+          <ScalarProperty Name="StorageLocation" ColumnName="StorageLocation" />
+          <ScalarProperty Name="PasswordText" ColumnName="PasswordText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOUserAuthorizedAccounts">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOUserAuthorizedAccount">
+        <MappingFragment StoreEntitySet="tblEVOUserAuthorizedAccount">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOUserCarts">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOUserCart">
+        <MappingFragment StoreEntitySet="tblEVOUserCart">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="SalesTaxId" ColumnName="SalesTaxId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOUserNotificationSettings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOUserNotificationSetting">
+        <MappingFragment StoreEntitySet="tblEVOUserNotificationSettings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />
+          <ScalarProperty Name="EVOLibraryID" ColumnName="EVOLibraryID" />
+          <ScalarProperty Name="EVOEventID" ColumnName="EVOEventID" />
+          <ScalarProperty Name="IsNotificationRequired" ColumnName="IsNotificationRequired" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOUserOrderInfoes">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOUserOrderInfo">
+        <MappingFragment StoreEntitySet="tblEVOUserOrderInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CartId" ColumnName="CartId" />
+          <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="AddOnSubType" ColumnName="AddOnSubType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOUserPackageMappings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOUserPackageMapping">
+        <MappingFragment StoreEntitySet="tblEVOUserPackageMapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="SubscribedOn" ColumnName="SubscribedOn" />
+          <ScalarProperty Name="ExpireOnUTC" ColumnName="ExpireOnUTC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOUserPackageMappingHistories">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOUserPackageMappingHistory">
+        <MappingFragment StoreEntitySet="tblEVOUserPackageMappingHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOUserPlaylists">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOUserPlaylist">
+        <MappingFragment StoreEntitySet="tblEVOUserPlaylist">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="EvoMediaID" ColumnName="EvoMediaID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOUserRoles">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOUserRole">
+        <MappingFragment StoreEntitySet="tblEVOUserRole">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOUserRoleMappings">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOUserRoleMapping">
+        <MappingFragment StoreEntitySet="tblEVOUserRoleMapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EVOUserID" ColumnName="EVOUserID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="EVOLibraryID" ColumnName="EVOLibraryID" />
+          <ScalarProperty Name="EVOEventID" ColumnName="EVOEventID" />
+          <ScalarProperty Name="EVOMediaID" ColumnName="EVOMediaID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
+          <ScalarProperty Name="UserPackageId" ColumnName="UserPackageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t1">
+      <EntityTypeMapping TypeName="TDEVOV2Model.t1">
+        <MappingFragment StoreEntitySet="t1">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOEmailTemplateolds">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOEmailTemplateold">
+        <MappingFragment StoreEntitySet="tblEVOEmailTemplateold">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOFileQueues">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOFileQueue">
+        <MappingFragment StoreEntitySet="tblEVOFileQueue">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="EventTitle" ColumnName="EventTitle" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPackageId" ColumnName="UserPackageId" />
+          <ScalarProperty Name="UploadStatus" ColumnName="UploadStatus" />
+          <ScalarProperty Name="FileSizeInMB" ColumnName="FileSizeInMB" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="EvoMediaID" ColumnName="EvoMediaID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="EmailOccurence" ColumnName="EmailOccurence" />
+          <ScalarProperty Name="ZipFilePath" ColumnName="ZipFilePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEVOFileQueueHistories">
+      <EntityTypeMapping TypeName="TDEVOV2Model.tblEVOFileQueueHistory">
+        <MappingFragment StoreEntitySet="tblEVOFileQueueHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="EventTitle" ColumnName="EventTitle" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPackageId" ColumnName="UserPackageId" />
+          <ScalarProperty Name="UploadStatus" ColumnName="UploadStatus" />
+          <ScalarProperty Name="FileSizeInMB" ColumnName="FileSizeInMB" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="EvoMediaID" ColumnName="EvoMediaID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestTables">
+      <EntityTypeMapping TypeName="TDEVOV2Model.TestTable">
+        <MappingFragment StoreEntitySet="TestTable">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="TDEVOV2Model.database_firewall_rules">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="TDEVOV2Model.Store.fnGetEmailNotifiers" FunctionImportName="fnGetEmailNotifiers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TDEVOV2Model.fnGetEmailNotifiers_Result">
+          <ScalarProperty Name="MediaId" ColumnName="MediaId" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="TDEVOV2Model.Store.fnGetEventAdmins" FunctionImportName="fnGetEventAdmins">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TDEVOV2Model.fnGetEventAdmins_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="TDEVOV2Model.Store.fnGetMediaInfobyEventId" FunctionImportName="fnGetMediaInfobyEventId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TDEVOV2Model.fnGetMediaInfobyEventId_Result">
+          <ScalarProperty Name="MediaId" ColumnName="MediaId" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="TDEVOV2Model.Store.fnGetMediaStatistics" FunctionImportName="fnGetMediaStatistics">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TDEVOV2Model.fnGetMediaStatistics_Result">
+          <ScalarProperty Name="MediaTitle" ColumnName="MediaTitle" />
+          <ScalarProperty Name="MediaId" ColumnName="MediaId" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Visit_Time" ColumnName="Visit Time" />
+          <ScalarProperty Name="Ratings" ColumnName="Ratings" />
+          <ScalarProperty Name="Shares" ColumnName="Shares" />
+          <ScalarProperty Name="Device" ColumnName="Device" />
+          <ScalarProperty Name="Browser" ColumnName="Browser" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="DownloadedFiles" ColumnName="DownloadedFiles" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="TDEVOV2Model.Store.fnGetUploadedMediaByUserPackageId" FunctionImportName="fnGetUploadedMediaByUserPackageId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TDEVOV2Model.fnGetUploadedMediaByUserPackageId_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EvoEventId" ColumnName="EvoEventId" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="TrimmedFileSize" ColumnName="TrimmedFileSize" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="TDEVOV2Model.Store.fnGetUserInfoByUserPackageId" FunctionImportName="fnGetUserInfoByUserPackageId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TDEVOV2Model.fnGetUserInfoByUserPackageId_Result">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ELMAH_GetErrorsXml" FunctionName="TDEVOV2Model.Store.ELMAH_GetErrorsXml" />
+    <FunctionImportMapping FunctionImportName="ELMAH_GetErrorXml" FunctionName="TDEVOV2Model.Store.ELMAH_GetErrorXml" />
+    <FunctionImportMapping FunctionImportName="ELMAH_LogError" FunctionName="TDEVOV2Model.Store.ELMAH_LogError" />
+    <FunctionImportMapping FunctionImportName="GetPermission" FunctionName="TDEVOV2Model.Store.GetPermission" />
+    <FunctionImportMapping FunctionImportName="PROC_GetSessions" FunctionName="TDEVOV2Model.Store.PROC_GetSessions" />
+    <FunctionImportMapping FunctionImportName="procAddContactUs" FunctionName="TDEVOV2Model.Store.procAddContactUs" />
+    <FunctionImportMapping FunctionImportName="procAddFileQueueRecord" FunctionName="TDEVOV2Model.Store.procAddFileQueueRecord" />
+    <FunctionImportMapping FunctionImportName="procAddIPAddress" FunctionName="TDEVOV2Model.Store.procAddIPAddress" />
+    <FunctionImportMapping FunctionImportName="ProcAddRating" FunctionName="TDEVOV2Model.Store.ProcAddRating" />
+    <FunctionImportMapping FunctionImportName="procAddRecuringTransaction" FunctionName="TDEVOV2Model.Store.procAddRecuringTransaction" />
+    <FunctionImportMapping FunctionImportName="procAddUserPackageBillingInfo" FunctionName="TDEVOV2Model.Store.procAddUserPackageBillingInfo" />
+    <FunctionImportMapping FunctionImportName="procApproveChatMessage" FunctionName="TDEVOV2Model.Store.procApproveChatMessage" />
+    <FunctionImportMapping FunctionImportName="procCanApplyPromoCode" FunctionName="TDEVOV2Model.Store.procCanApplyPromoCode" />
+    <FunctionImportMapping FunctionImportName="procCancelSubscription" FunctionName="TDEVOV2Model.Store.procCancelSubscription" />
+    <FunctionImportMapping FunctionImportName="procCanclePurchaseOrderSubscription" FunctionName="TDEVOV2Model.Store.procCanclePurchaseOrderSubscription" />
+    <FunctionImportMapping FunctionImportName="procCheckCustomEventAccess" FunctionName="TDEVOV2Model.Store.procCheckCustomEventAccess">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TDEVOV2Model.procCheckCustomEventAccess_Result">
+          <ScalarProperty Name="IsAccess" ColumnName="IsAccess" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="procCheckMediaApprovalPending" FunctionName="TDEVOV2Model.Store.procCheckMediaApprovalPending">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TDEVOV2Model.procCheckMediaApprovalPending_Result">
+          <ScalarProperty Name="RESULT_CODE" ColumnName="RESULT_CODE" />
+          <ScalarProperty Name="IS_MEDIA_PENDING" ColumnName="IS_MEDIA_PENDING" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="procCheckMediaFile" FunctionName="TDEVOV2Model.Store.procCheckMediaFile" />
+    <FunctionImportMapping FunctionImportName="procClearCancellationOnHold" FunctionName="TDEVOV2Model.Store.procClearCancellationOnHold" />
+    <FunctionImportMapping FunctionImportName="procCreateChat" FunctionName="TDEVOV2Model.Store.procCreateChat" />
+    <FunctionImportMapping FunctionImportName="procCreateFollowMapping" FunctionName="TDEVOV2Model.Store.procCreateFollowMapping" />
+    <FunctionImportMapping FunctionImportName="procCreateNotification" FunctionName="TDEVOV2Model.Store.procCreateNotification" />
+  </EntityContainerMapping>
+</Mapping>

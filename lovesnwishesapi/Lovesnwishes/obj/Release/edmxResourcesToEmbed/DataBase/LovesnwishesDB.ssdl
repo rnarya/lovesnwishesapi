@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="lovesnwishesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FeedId" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CommentType" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CommentedBy" Type="int" Nullable="false" />
+    <Property Name="CommentedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblFeed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FeedType" Type="int" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="Feed" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="MediaFolder" Type="nvarchar(max)" />
+    <Property Name="MediaContent" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'lovesnwishes.dbo.tblFriendMapping' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblFriendMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="SendFrom" />
+      <PropertyRef Name="SendTo" />
+      <PropertyRef Name="isFriend" />
+      <PropertyRef Name="SentOn" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="SendFrom" Type="int" Nullable="false" />
+    <Property Name="SendTo" Type="int" Nullable="false" />
+    <Property Name="isFriend" Type="bit" Nullable="false" />
+    <Property Name="SentOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ProfileImageUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="lovesnwishesModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblComment" EntityType="Self.tblComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblFeed" EntityType="Self.tblFeed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblFriendMapping" EntityType="Self.tblFriendMapping" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblFriendMapping].[Id] AS [Id], 
+    [tblFriendMapping].[SendFrom] AS [SendFrom], 
+    [tblFriendMapping].[SendTo] AS [SendTo], 
+    [tblFriendMapping].[isFriend] AS [isFriend], 
+    [tblFriendMapping].[SentOn] AS [SentOn]
+    FROM [dbo].[tblFriendMapping] AS [tblFriendMapping]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

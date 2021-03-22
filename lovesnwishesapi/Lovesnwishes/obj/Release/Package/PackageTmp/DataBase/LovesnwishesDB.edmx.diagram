@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7a919b7351704032a2e2a6a4450cb863" Name="Diagram1">
+        <EntityTypeShape EntityType="lovesnwishesModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="lovesnwishesModel.tblUser" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="lovesnwishesModel.tblComment" Width="1.5" PointX="3" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="lovesnwishesModel.tblFeed" Width="1.5" PointX="3.375" PointY="2.75" />
+        <EntityTypeShape EntityType="lovesnwishesModel.tblFriendMapping" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

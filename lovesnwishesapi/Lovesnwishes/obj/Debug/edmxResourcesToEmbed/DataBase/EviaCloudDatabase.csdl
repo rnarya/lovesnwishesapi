@@ -1,0 +1,2543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TDEVOV2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="fnGetEmailNotifiers_Result">
+    <Property Name="MediaId" Type="Int32" />
+    <Property Name="EventName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <ComplexType Name="fnGetEventAdmins_Result">
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <ComplexType Name="fnGetMediaInfobyEventId_Result">
+    <Property Name="MediaId" Type="Int32" />
+    <Property Name="SessionCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="fnGetMediaStatistics_Result">
+    <Property Name="MediaTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MediaId" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Visit_Time" Type="DateTime" />
+    <Property Name="Ratings" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Shares" Type="Int32" />
+    <Property Name="Device" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Browser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="DownloadedFiles" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <ComplexType Name="fnGetUploadedMediaByUserPackageId_Result">
+    <Property Name="Id" Type="Int32" />
+    <Property Name="EvoEventId" Type="Int32" />
+    <Property Name="Size" Type="Decimal" Precision="15" Scale="2" />
+    <Property Name="TrimmedFileSize" Type="Decimal" Precision="15" Scale="2" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <ComplexType Name="fnGetUserInfoByUserPackageId_Result">
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <ComplexType Name="SplitString_Result">
+    <Property Name="Item" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <EntityType Name="ELMAH_Error">
+    <Key>
+      <PropertyRef Name="ErrorId" />
+    </Key>
+    <Property Name="ErrorId" Type="Guid" Nullable="false" />
+    <Property Name="Application" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Host" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StatusCode" Type="Int32" Nullable="false" />
+    <Property Name="TimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sequence" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AllXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IPData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="StartRange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EndRange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Thread" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Logger" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Exception" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HostName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="GUID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EVOUserID" Type="Int32" />
+    <Property Name="Origin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblEmailAttachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailsentId" Type="Int32" />
+    <Property Name="Attachment" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContentType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblEVOAboutFeature">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Thumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblEVOAddOn">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" />
+    <Property Name="TypeId" Type="Int16" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblEVOAddOnType" Relationship="Self.FK_tblEVOAddOn_tblEVOAddOnType" FromRole="tblEVOAddOn" ToRole="tblEVOAddOnType" />
+  </EntityType>
+  <EntityType Name="tblEVOAddOnType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblEVOAddOns" Relationship="Self.FK_tblEVOAddOn_tblEVOAddOnType" FromRole="tblEVOAddOnType" ToRole="tblEVOAddOn" />
+  </EntityType>
+  <EntityType Name="tblEVOApiUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LibraryId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEVOBroadcastLocation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblEVOBulkInviteUpload">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileUploaded" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IfPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IfEmail" Type="Boolean" Nullable="false" />
+    <Property Name="EventId" Type="Int32" Nullable="false" />
+    <Property Name="LibraryId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="tblEVOCDNPlayer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PlayerID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEVOHeroContents" Relationship="Self.FK_tblEVOHeroContent_tblEVOCDNPlayer" FromRole="tblEVOCDNPlayer" ToRole="tblEVOHeroContent" />
+    <NavigationProperty Name="tblEVOMedias" Relationship="Self.FK_tblEVOMedia_tblEVOCDNPlayer" FromRole="tblEVOCDNPlayer" ToRole="tblEVOMedia" />
+  </EntityType>
+  <EntityType Name="tblEVOCDNProvider">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CDNPathSecure" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CDNPathUnsecure" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CDNKey1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CDNKey2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEVOHeroContents" Relationship="Self.FK_tblEVOHeroContent_tblEVOCDNProvider" FromRole="tblEVOCDNProvider" ToRole="tblEVOHeroContent" />
+    <NavigationProperty Name="tblEVOMediaResources" Relationship="Self.FK_tblEVOMediaResource_tblEVOCDNProvider" FromRole="tblEVOCDNProvider" ToRole="tblEVOMediaResource" />
+  </EntityType>
+  <EntityType Name="tblEVOChat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChatType" Type="Int32" Nullable="false" />
+    <Property Name="KeyId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EVOLibraryID" Type="Int32" />
+    <Property Name="EVOMediaId" Type="Int32" />
+    <Property Name="ChatOrder" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EVOEventId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="IsApprovalRequired" Type="Boolean" />
+    <Property Name="Network" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEVOChatMessages" Relationship="Self.FK_tblEVOChatMessage_tblEVOChat" FromRole="tblEVOChat" ToRole="tblEVOChatMessage" />
+  </EntityType>
+  <EntityType Name="tblEVOChatMessage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChatId" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EVOUserID" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsBroadcast" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="ParentMessageId" Type="Int32" />
+    <NavigationProperty Name="tblEVOChat" Relationship="Self.FK_tblEVOChatMessage_tblEVOChat" FromRole="tblEVOChatMessage" ToRole="tblEVOChat" />
+  </EntityType>
+  <EntityType Name="tblEVOCity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateId" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEVOUsers" Relationship="Self.FK_tblEVOUser_tblEVOCity" FromRole="tblEVOCity" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVOContactU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Company" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblEVOCountry">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEVOStates" Relationship="Self.FK_tblEVOStateFull_tblEVOCountryFull" FromRole="tblEVOCountry" ToRole="tblEVOState" />
+    <NavigationProperty Name="tblEVOUsers" Relationship="Self.FK_tblEVOUser_tblEVOCountry" FromRole="tblEVOCountry" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVOCustomResource">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LibraryId" Type="Int32" />
+    <Property Name="EventId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tblEVOEmailSent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="From" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="To" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CC" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+    <Property Name="SentOn" Type="DateTime" Precision="3" />
+    <Property Name="TemplateId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsHtml" Type="Boolean" Nullable="false" />
+    <Property Name="Type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblEVOEmailSentToInvite">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="From" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="To" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CC" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+    <Property Name="SentOn" Type="DateTime" Precision="3" />
+    <Property Name="TemplateId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsHtml" Type="Boolean" Nullable="false" />
+    <Property Name="Type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblEVOEmailTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Priority" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblEVOEventTrack">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TrackName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="EVOEventID" Type="Int32" />
+    <Property Name="EVOMediaID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblEVOEventVisitUserLocation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOUserId" Type="Int32" />
+    <Property Name="EventId" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Device" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Browser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VisitDateTime" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="tblEVOLibraryEvent" Relationship="Self.FK_tblEVOEventVisitUserLocation_tblEVOEventid" FromRole="tblEVOEventVisitUserLocation" ToRole="tblEVOLibraryEvent" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVOEventVisitUserLocation_tblEVOUser" FromRole="tblEVOEventVisitUserLocation" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVOFAQ">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VideoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Byte" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblEVOFavorite">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MediaId" Type="Int32" />
+    <Property Name="EVOEventId" Type="Int32" />
+    <Property Name="EVOUserID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tblEVOLibraryEvent" Relationship="Self.FK_tblEVOFavorite_tblEVOLibraryEvent" FromRole="tblEVOFavorite" ToRole="tblEVOLibraryEvent" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVOFavorite_tblEVOMedia" FromRole="tblEVOFavorite" ToRole="tblEVOMedia" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVOFavorite_tblEVOUser" FromRole="tblEVOFavorite" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVOFeature">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOPackageID" Type="Int32" />
+    <Property Name="EVOStatusID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HasValue" Type="Boolean" />
+    <Property Name="ShowAboutPage" Type="Boolean" />
+    <Property Name="FeatureView" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tblEVOPricings" Relationship="Self.FK_tblEVOPricing_tblEVOFeature" FromRole="tblEVOFeature" ToRole="tblEVOPricing" />
+  </EntityType>
+  <EntityType Name="tblEVOFollowing">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOUserID" Type="Int32" />
+    <Property Name="EVOEventID" Type="Int32" />
+    <Property Name="IsRead" Type="Boolean" />
+    <Property Name="LastSeenDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsInvited" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVOFollowing_tblEVOUser" FromRole="tblEVOFollowing" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVOFont">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FontName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblEVOHeroContent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContentType" Type="Int32" />
+    <Property Name="ContentDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EVOEventID" Type="Int32" />
+    <Property Name="EVOLibraryID" Type="Int32" />
+    <Property Name="MediaID" Type="Int32" />
+    <Property Name="CDNID" Type="Int32" />
+    <Property Name="CDNPlayerId" Type="Int32" />
+    <Property Name="OpenUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <NavigationProperty Name="tblEVOCDNPlayer" Relationship="Self.FK_tblEVOHeroContent_tblEVOCDNPlayer" FromRole="tblEVOHeroContent" ToRole="tblEVOCDNPlayer" />
+    <NavigationProperty Name="tblEVOCDNProvider" Relationship="Self.FK_tblEVOHeroContent_tblEVOCDNProvider" FromRole="tblEVOHeroContent" ToRole="tblEVOCDNProvider" />
+    <NavigationProperty Name="tblEVOLibrary" Relationship="Self.FK_tblEVOHeroContent_tblEVOLibrary" FromRole="tblEVOHeroContent" ToRole="tblEVOLibrary" />
+    <NavigationProperty Name="tblEVOLibraryEvent" Relationship="Self.FK_tblEVOHeroContent_tblEVOLibraryEvent" FromRole="tblEVOHeroContent" ToRole="tblEVOLibraryEvent" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVOHeroContent_tblEVOMedia" FromRole="tblEVOHeroContent" ToRole="tblEVOMedia" />
+  </EntityType>
+  <EntityType Name="tblEVOLibrary">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FriendlyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SmallHeaderImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="tblEVOHeroContents" Relationship="Self.FK_tblEVOHeroContent_tblEVOLibrary" FromRole="tblEVOLibrary" ToRole="tblEVOHeroContent" />
+    <NavigationProperty Name="tblEVONotifications" Relationship="Self.FK_tblEVONotification_tblEVOInstance" FromRole="tblEVOLibrary" ToRole="tblEVONotification" />
+    <NavigationProperty Name="tblEVOShareTrackings" Relationship="Self.FK_tblEVOShareTracking_tblEVOLibrary" FromRole="tblEVOLibrary" ToRole="tblEVOShareTracking" />
+    <NavigationProperty Name="tblEVOUserNotificationSettings" Relationship="Self.FK_tblEVOUserNotificationSettings_tblEVOLibrary" FromRole="tblEVOLibrary" ToRole="tblEVOUserNotificationSettings" />
+    <NavigationProperty Name="tblEVOUserRoleMappings" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOLibrary" FromRole="tblEVOLibrary" ToRole="tblEVOUserRoleMapping" />
+  </EntityType>
+  <EntityType Name="tblEVOLibraryEvent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOLibraryID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FriendlyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="Category" Type="Int32" Nullable="false" />
+    <Property Name="LargeHeaderImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SmallHeaderImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="StateId" Type="Int32" Nullable="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="EventState" Type="Int32" Nullable="false" />
+    <Property Name="ViewType" Type="Byte" />
+    <Property Name="IsApprovalRequired" Type="Boolean" Nullable="false" />
+    <Property Name="PublishDate" Type="DateTime" Precision="3" />
+    <Property Name="Address1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="PublishTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DomainName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PreviousEventState" Type="Int32" />
+    <Property Name="IsFeatured" Type="Boolean" />
+    <Property Name="IsShareHide" Type="Boolean" />
+    <Property Name="AccessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EmailWorkDomain" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WelcomeText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SignInImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AllowConcurrentAccess" Type="Boolean" />
+    <Property Name="IsLinkedInAccess" Type="Boolean" />
+    <Property Name="IsCompanyName" Type="Boolean" />
+    <NavigationProperty Name="tblEVOEventVisitUserLocations" Relationship="Self.FK_tblEVOEventVisitUserLocation_tblEVOEventid" FromRole="tblEVOLibraryEvent" ToRole="tblEVOEventVisitUserLocation" />
+    <NavigationProperty Name="tblEVOFavorites" Relationship="Self.FK_tblEVOFavorite_tblEVOLibraryEvent" FromRole="tblEVOLibraryEvent" ToRole="tblEVOFavorite" />
+    <NavigationProperty Name="tblEVOHeroContents" Relationship="Self.FK_tblEVOHeroContent_tblEVOLibraryEvent" FromRole="tblEVOLibraryEvent" ToRole="tblEVOHeroContent" />
+    <NavigationProperty Name="tblEVONotifications" Relationship="Self.FK_tblEVONotification_tblEVOInstanceLibrary" FromRole="tblEVOLibraryEvent" ToRole="tblEVONotification" />
+    <NavigationProperty Name="tblEVOShareTrackings" Relationship="Self.FK_tblEVOShareTracking_tblEVOLibraryEvent" FromRole="tblEVOLibraryEvent" ToRole="tblEVOShareTracking" />
+    <NavigationProperty Name="tblEVOSpeakerEventMappings" Relationship="Self.FK_tblEVOSpeakerEventMapping_tblEVOLibraryEvent" FromRole="tblEVOLibraryEvent" ToRole="tblEVOSpeakerEventMapping" />
+    <NavigationProperty Name="tblEVOUserNotificationSettings" Relationship="Self.FK_tblEVOUserNotificationSettings_tblEVOLibraryEvent" FromRole="tblEVOLibraryEvent" ToRole="tblEVOUserNotificationSettings" />
+    <NavigationProperty Name="tblEVOUserRoleMappings" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOLibraryEvent" FromRole="tblEVOLibraryEvent" ToRole="tblEVOUserRoleMapping" />
+  </EntityType>
+  <EntityType Name="tblEVOMedia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MediaID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EVOEventID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ThumbnailImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CDNProviderID" Type="Int32" />
+    <Property Name="MediaUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Webcast" Type="Boolean" />
+    <Property Name="WebcastingURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StatusId" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="OriginalMediaId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MediaTag" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MediaUploadType" Type="Byte" />
+    <Property Name="FileSize" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TrimmedFileSize" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LiveStreamStartDate" Type="DateTime" Precision="3" />
+    <Property Name="LiveStreamEndDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SessionCode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BroadCastLocation" Type="Int32" />
+    <Property Name="LiveStreamId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ScheduleId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StreamName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ServerUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDownload" Type="Boolean" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsLegacy" Type="Boolean" Nullable="false" />
+    <Property Name="InputAssetId" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="OutputAssetId" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="PlaybackUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="OriginalOutputAssetId" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="OriginalPlaybackUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="IsSessionVideoUnavailable" Type="Boolean" />
+    <Property Name="CaptionsUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VideoIndexerID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="IsImported" Type="Boolean" />
+    <Property Name="EviaCMSMediaID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EviaCMSOrgID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EviaCMSSecretKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsQRCode" Type="Boolean" />
+    <NavigationProperty Name="tblEVOCDNPlayer" Relationship="Self.FK_tblEVOMedia_tblEVOCDNPlayer" FromRole="tblEVOMedia" ToRole="tblEVOCDNPlayer" />
+    <NavigationProperty Name="tblEVOFavorites" Relationship="Self.FK_tblEVOFavorite_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVOFavorite" />
+    <NavigationProperty Name="tblEVOHeroContents" Relationship="Self.FK_tblEVOHeroContent_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVOHeroContent" />
+    <NavigationProperty Name="tblEVOMediaApproverMappings" Relationship="Self.FK_tblEVOMediaApproverMapping_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVOMediaApproverMapping" />
+    <NavigationProperty Name="tblEVOMediaCustomFields" Relationship="Self.FK_tblEVOMediaCustomField_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVOMediaCustomField" />
+    <NavigationProperty Name="tblEVOMediaResources" Relationship="Self.FK_tblEVOMediaResource_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVOMediaResource" />
+    <NavigationProperty Name="tblEVOMediaTrackings" Relationship="Self.FK_tblEVOMediaTracking_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVOMediaTracking" />
+    <NavigationProperty Name="tblEVONotifications" Relationship="Self.FK_tblEVONotification_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVONotification" />
+    <NavigationProperty Name="tblEVORatings" Relationship="Self.FK_tblEVORating_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVORating" />
+    <NavigationProperty Name="tblEVOShareTrackings" Relationship="Self.FK_tblEVOShareTracking_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVOShareTracking" />
+    <NavigationProperty Name="tblEVOSpeakerMediaMappings" Relationship="Self.FK_tblEVOSpeakerMediaMapping_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVOSpeakerMediaMapping" />
+    <NavigationProperty Name="tblEVOUserPlaylists" Relationship="Self.FK_tblEVOUserPlaylist_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVOUserPlaylist" />
+    <NavigationProperty Name="tblEVOUserRoleMappings" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOMedia" FromRole="tblEVOMedia" ToRole="tblEVOUserRoleMapping" />
+  </EntityType>
+  <EntityType Name="tblEVOMediaApproverMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOMediaId" Type="Int32" Nullable="false" />
+    <Property Name="ApprovalStatus" Type="Byte" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="ModifyBy" Type="Int32" />
+    <Property Name="ModifyOn" Type="DateTime" Precision="3" />
+    <Property Name="DateRequested" Type="DateTime" Precision="3" />
+    <Property Name="ApprovalRequester" Type="Int32" />
+    <Property Name="EVOUserId" Type="Int32" />
+    <Property Name="NotificationSent" Type="Int32" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVOMediaApproverMapping_tblEVOMedia" FromRole="tblEVOMediaApproverMapping" ToRole="tblEVOMedia" />
+  </EntityType>
+  <EntityType Name="tblEVOMediaCustomField">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOMediaId" Type="Int32" Nullable="false" />
+    <Property Name="FieldName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FieldValue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVOMediaCustomField_tblEVOMedia" FromRole="tblEVOMediaCustomField" ToRole="tblEVOMedia" />
+  </EntityType>
+  <EntityType Name="tblEVOMediaDownloadTracking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOUserID" Type="Int32" />
+    <Property Name="MediaResourceId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVOMediaDownloadTracking_tblEVOMediaDownloadTracking" FromRole="tblEVOMediaDownloadTracking" ToRole="tblEVOUser" />
+    <NavigationProperty Name="tblEVOMediaResource" Relationship="Self.FK_tblEVOMediaDownloadTracking_tblEVOMediaResource" FromRole="tblEVOMediaDownloadTracking" ToRole="tblEVOMediaResource" />
+  </EntityType>
+  <EntityType Name="tblEVOMediaResource">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOMediaID" Type="Int32" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CDNId" Type="Int32" />
+    <Property Name="FileURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MediaSize" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblEVOCDNProvider" Relationship="Self.FK_tblEVOMediaResource_tblEVOCDNProvider" FromRole="tblEVOMediaResource" ToRole="tblEVOCDNProvider" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVOMediaResource_tblEVOMedia" FromRole="tblEVOMediaResource" ToRole="tblEVOMedia" />
+    <NavigationProperty Name="tblEVOMediaDownloadTrackings" Relationship="Self.FK_tblEVOMediaDownloadTracking_tblEVOMediaResource" FromRole="tblEVOMediaResource" ToRole="tblEVOMediaDownloadTracking" />
+  </EntityType>
+  <EntityType Name="tblEVOMediaTracking">
+    <Key>
+      <PropertyRef Name="TrackId" />
+    </Key>
+    <Property Name="TrackId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOUserID" Type="Int32" />
+    <Property Name="EVOMediaId" Type="Int32" Nullable="false" />
+    <Property Name="ViewState" Type="Int32" />
+    <Property Name="ViewedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Device" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Browser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVOMediaTracking_tblEVOMedia" FromRole="tblEVOMediaTracking" ToRole="tblEVOMedia" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVOMediaTracking_tblEVOUser" FromRole="tblEVOMediaTracking" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVOMediaType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FriendlyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblEVONotification">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOUserID" Type="Int32" />
+    <Property Name="EVOLibraryID" Type="Int32" />
+    <Property Name="EVONotificationTypeId" Type="Int32" />
+    <Property Name="EVOEventID" Type="Int32" />
+    <Property Name="HeadingText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsRead" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="EVOMediaId" Type="Int32" />
+    <Property Name="EVOSpeakerId" Type="Int32" />
+    <Property Name="Count" Type="Int32" />
+    <NavigationProperty Name="tblEVOLibrary" Relationship="Self.FK_tblEVONotification_tblEVOInstance" FromRole="tblEVONotification" ToRole="tblEVOLibrary" />
+    <NavigationProperty Name="tblEVOLibraryEvent" Relationship="Self.FK_tblEVONotification_tblEVOInstanceLibrary" FromRole="tblEVONotification" ToRole="tblEVOLibraryEvent" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVONotification_tblEVOMedia" FromRole="tblEVONotification" ToRole="tblEVOMedia" />
+    <NavigationProperty Name="tblEVONotificationType" Relationship="Self.FK_tblEVONotification_tblEVONotificationType" FromRole="tblEVONotification" ToRole="tblEVONotificationType" />
+    <NavigationProperty Name="tblEVOSpeaker" Relationship="Self.FK_tblEVONotification_tblEVOSpeaker" FromRole="tblEVONotification" ToRole="tblEVOSpeaker" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVONotification_tblEVOUser" FromRole="tblEVONotification" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVONotificationType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NotificationType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ThumbnailImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEVONotifications" Relationship="Self.FK_tblEVONotification_tblEVONotificationType" FromRole="tblEVONotificationType" ToRole="tblEVONotification" />
+  </EntityType>
+  <EntityType Name="tblEVOPackage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="EVOStatusID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="15" Scale="2" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SubHeading" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblEVOPackageFeature">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Value" Type="Decimal" Precision="15" Scale="2" />
+    <Property Name="TypeId" Type="Int16" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tblEVOPackageFeatureMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" />
+    <Property Name="PackageId" Type="Int32" Nullable="false" />
+    <Property Name="FeatureId" Type="Int16" Nullable="false" />
+    <Property Name="SortOrder" Type="Int16" />
+  </EntityType>
+  <EntityType Name="tblEVOPackagePermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PackageId" Type="Int32" />
+    <Property Name="PermissionId" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblEVOPackageUpgradeRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentId" Type="Int64" />
+    <Property Name="PackageId" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblEVOPayment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserPackageID" Type="Int32" Nullable="false" />
+    <Property Name="PromoCodeID" Type="Int16" />
+    <Property Name="PaymentTypeID" Type="Int16" Nullable="false" />
+    <Property Name="TransId" Type="Int32" Nullable="false" />
+    <Property Name="AddOnQty" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ProfileID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PNRef" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TransResult" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+    <Property Name="NextBillingDate" Type="DateTime" Precision="3" />
+    <Property Name="SalesTaxID" Type="Int32" />
+    <Property Name="IsRecurring" Type="Boolean" />
+    <NavigationProperty Name="tblEVOPromoCode" Relationship="Self.FK_tblEVOPayment_tblEVOPayment" FromRole="tblEVOPayment" ToRole="tblEVOPromoCode" />
+    <NavigationProperty Name="tblEVOPaymentType" Relationship="Self.FK_tblEVOPayment_tblEVOPaymentType" FromRole="tblEVOPayment" ToRole="tblEVOPaymentType" />
+    <NavigationProperty Name="tblEVOUserPackageMapping" Relationship="Self.FK_tblEVOPayment_tblEVOUser" FromRole="tblEVOPayment" ToRole="tblEVOUserPackageMapping" />
+  </EntityType>
+  <EntityType Name="tblEVOPaymentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tblEVOPayments" Relationship="Self.FK_tblEVOPayment_tblEVOPaymentType" FromRole="tblEVOPaymentType" ToRole="tblEVOPayment" />
+  </EntityType>
+  <EntityType Name="tblEVOPoll">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="EVOMediaID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblEVOPollOption">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOPollId" Type="Int32" Nullable="false" />
+    <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblEVOPollResult">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOPollId" Type="Int32" Nullable="false" />
+    <Property Name="EVOPollOptionId" Type="Int32" Nullable="false" />
+    <Property Name="EVOUserID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEVOPricing">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOFeatureID" Type="Int32" />
+    <Property Name="EVOPackageID" Type="Int32" />
+    <Property Name="EVOTemplateID" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="20" Scale="4" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblEVOFeature" Relationship="Self.FK_tblEVOPricing_tblEVOFeature" FromRole="tblEVOPricing" ToRole="tblEVOFeature" />
+  </EntityType>
+  <EntityType Name="tblEVOPromoCode">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="ExpireDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="tblEVOPayments" Relationship="Self.FK_tblEVOPayment_tblEVOPayment" FromRole="tblEVOPromoCode" ToRole="tblEVOPayment" />
+  </EntityType>
+  <EntityType Name="tblEVOPurchaseOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PONumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="StartFrom" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExpireOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblEVORating">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOUserID" Type="Int32" />
+    <Property Name="EVOMediaId" Type="Int32" Nullable="false" />
+    <Property Name="RatingDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RateCount" Type="Int32" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVORating_tblEVOMedia" FromRole="tblEVORating" ToRole="tblEVOMedia" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVORating_tblEVOUser" FromRole="tblEVORating" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEvoSalesTaxRate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaxRate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UserPackageId" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="tblEVOUserPackageMapping" Relationship="Self.FK_tblEvoSalesTaxRate_tblEVOUserPackageMapping" FromRole="tblEvoSalesTaxRate" ToRole="tblEVOUserPackageMapping" />
+  </EntityType>
+  <EntityType Name="tblEVOShareTracking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOMediaId" Type="Int32" />
+    <Property Name="EVOEventId" Type="Int32" />
+    <Property Name="EVOLibraryID" Type="Int32" />
+    <Property Name="ShareFrom" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SocialMediaType" Type="Byte" Nullable="false" />
+    <Property Name="ShareDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MediaViewState" Type="Int32" />
+    <Property Name="EVOUserId" Type="Int32" />
+    <NavigationProperty Name="tblEVOLibrary" Relationship="Self.FK_tblEVOShareTracking_tblEVOLibrary" FromRole="tblEVOShareTracking" ToRole="tblEVOLibrary" />
+    <NavigationProperty Name="tblEVOLibraryEvent" Relationship="Self.FK_tblEVOShareTracking_tblEVOLibraryEvent" FromRole="tblEVOShareTracking" ToRole="tblEVOLibraryEvent" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVOShareTracking_tblEVOMedia" FromRole="tblEVOShareTracking" ToRole="tblEVOMedia" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVOShareTracking_tblEVOUser" FromRole="tblEVOShareTracking" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVOSlideImageResource">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LibraryId" Type="Int32" />
+    <Property Name="EventId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ActionPerformed" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblEVOSpeaker">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProfileImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LinkedIn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Facebook" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Twitter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GooglePlus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ThumbnailImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Yammer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEVONotifications" Relationship="Self.FK_tblEVONotification_tblEVOSpeaker" FromRole="tblEVOSpeaker" ToRole="tblEVONotification" />
+    <NavigationProperty Name="tblEVOSpeakerEventMappings" Relationship="Self.FK_tblEVOSpeakerEventMapping_tblEVOSpeaker" FromRole="tblEVOSpeaker" ToRole="tblEVOSpeakerEventMapping" />
+    <NavigationProperty Name="tblEVOSpeakerMediaMappings" Relationship="Self.FK_tblEVOSpeakerMediaMapping_tblEVOSpeaker" FromRole="tblEVOSpeaker" ToRole="tblEVOSpeakerMediaMapping" />
+  </EntityType>
+  <EntityType Name="tblEVOSpeakerEventMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOEventID" Type="Int32" Nullable="false" />
+    <Property Name="EVOSpeakerID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblEVOLibraryEvent" Relationship="Self.FK_tblEVOSpeakerEventMapping_tblEVOLibraryEvent" FromRole="tblEVOSpeakerEventMapping" ToRole="tblEVOLibraryEvent" />
+    <NavigationProperty Name="tblEVOSpeaker" Relationship="Self.FK_tblEVOSpeakerEventMapping_tblEVOSpeaker" FromRole="tblEVOSpeakerEventMapping" ToRole="tblEVOSpeaker" />
+  </EntityType>
+  <EntityType Name="tblEVOSpeakerMediaMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOMediaID" Type="Int32" Nullable="false" />
+    <Property Name="EVOSpeakerID" Type="Int32" Nullable="false" />
+    <Property Name="IsFeatured" Type="Boolean" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVOSpeakerMediaMapping_tblEVOMedia" FromRole="tblEVOSpeakerMediaMapping" ToRole="tblEVOMedia" />
+    <NavigationProperty Name="tblEVOSpeaker" Relationship="Self.FK_tblEVOSpeakerMediaMapping_tblEVOSpeaker" FromRole="tblEVOSpeakerMediaMapping" ToRole="tblEVOSpeaker" />
+  </EntityType>
+  <EntityType Name="tblEVOState">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEVOCountry" Relationship="Self.FK_tblEVOStateFull_tblEVOCountryFull" FromRole="tblEVOState" ToRole="tblEVOCountry" />
+    <NavigationProperty Name="tblEVOUsers" Relationship="Self.FK_tblEVOUser_tblEVOState" FromRole="tblEVOState" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVOStatu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FriendlyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblEVOSubscriptionCancelRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserPackageID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CancellationType" Type="Byte" />
+    <Property Name="PaymentId" Type="Int64" />
+    <Property Name="RenewDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblEVOUserPackageMapping" Relationship="Self.FK_tblEVOSubscriptionCancelRequest_tblEVOUserPackageMapping" FromRole="tblEVOSubscriptionCancelRequest" ToRole="tblEVOUserPackageMapping" />
+  </EntityType>
+  <EntityType Name="tblEVOThemeCustomization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LibraryId" Type="Int32" />
+    <Property Name="LibraryTheme" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EventId" Type="Int32" />
+    <Property Name="EventTheme" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedUserId" Type="Int32" />
+    <Property Name="ModifiedUserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblEVOThemePreview">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LibraryId" Type="Int32" />
+    <Property Name="LibraryTheme" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EventId" Type="Int32" />
+    <Property Name="EventTheme" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedUserId" Type="Int32" />
+    <Property Name="ModifiedUserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblEVOTimeZone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="StandardName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TimeSpan_Minutes" Type="Int64" />
+  </EntityType>
+  <EntityType Name="tblEVOTimeZonesWinter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StandardName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TimeSpan_Minutes" Type="Int64" />
+  </EntityType>
+  <EntityType Name="tblEVOUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOTimeZoneID" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ProfileImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordHash" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastLoggedIn" Type="DateTime" Precision="3" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" />
+    <Property Name="IsTempPwd" Type="Boolean" />
+    <Property Name="NotificationReadDate" Type="DateTime" Precision="3" />
+    <Property Name="AllowNameToView" Type="Boolean" />
+    <Property Name="CityId" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="StateId" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="IsChatDisabled" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="HashValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Company" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="VerificationCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StorageLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordText" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEVOCity" Relationship="Self.FK_tblEVOUser_tblEVOCity" FromRole="tblEVOUser" ToRole="tblEVOCity" />
+    <NavigationProperty Name="tblEVOCountry" Relationship="Self.FK_tblEVOUser_tblEVOCountry" FromRole="tblEVOUser" ToRole="tblEVOCountry" />
+    <NavigationProperty Name="tblEVOEventVisitUserLocations" Relationship="Self.FK_tblEVOEventVisitUserLocation_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVOEventVisitUserLocation" />
+    <NavigationProperty Name="tblEVOFavorites" Relationship="Self.FK_tblEVOFavorite_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVOFavorite" />
+    <NavigationProperty Name="tblEVOFollowings" Relationship="Self.FK_tblEVOFollowing_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVOFollowing" />
+    <NavigationProperty Name="tblEVOMediaDownloadTrackings" Relationship="Self.FK_tblEVOMediaDownloadTracking_tblEVOMediaDownloadTracking" FromRole="tblEVOUser" ToRole="tblEVOMediaDownloadTracking" />
+    <NavigationProperty Name="tblEVOMediaTrackings" Relationship="Self.FK_tblEVOMediaTracking_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVOMediaTracking" />
+    <NavigationProperty Name="tblEVONotifications" Relationship="Self.FK_tblEVONotification_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVONotification" />
+    <NavigationProperty Name="tblEVORatings" Relationship="Self.FK_tblEVORating_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVORating" />
+    <NavigationProperty Name="tblEVOShareTrackings" Relationship="Self.FK_tblEVOShareTracking_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVOShareTracking" />
+    <NavigationProperty Name="tblEVOState" Relationship="Self.FK_tblEVOUser_tblEVOState" FromRole="tblEVOUser" ToRole="tblEVOState" />
+    <NavigationProperty Name="tblEVOUserAuthorizedAccounts" Relationship="Self.FK_tblEVOUserAuthorizedAccount_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVOUserAuthorizedAccount" />
+    <NavigationProperty Name="tblEVOUserNotificationSettings" Relationship="Self.FK_tblEVOUserNotificationSettings_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVOUserNotificationSettings" />
+    <NavigationProperty Name="tblEVOUserPackageMappings" Relationship="Self.FK_tblEVOUserPackageMapping_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVOUserPackageMapping" />
+    <NavigationProperty Name="tblEVOUserPlaylists" Relationship="Self.FK_tblEVOUserPlaylist_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVOUserPlaylist" />
+    <NavigationProperty Name="tblEVOUserRoleMappings" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOUser" FromRole="tblEVOUser" ToRole="tblEVOUserRoleMapping" />
+  </EntityType>
+  <EntityType Name="tblEVOUserAuthorizedAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOUserID" Type="Int32" />
+    <Property Name="LoginProvider" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVOUserAuthorizedAccount_tblEVOUser" FromRole="tblEVOUserAuthorizedAccount" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVOUserCart">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="SalesTaxId" Type="Int32" />
+    <NavigationProperty Name="tblEVOUserOrderInfoes" Relationship="Self.FK__tblEVOUse__CartI__34E8D562" FromRole="tblEVOUserCart" ToRole="tblEVOUserOrderInfo" />
+    <NavigationProperty Name="tblEVOUserOrderInfoes1" Relationship="Self.FK__tblEVOUse__CartI__783FB9D5" FromRole="tblEVOUserCart" ToRole="tblEVOUserOrderInfo" />
+  </EntityType>
+  <EntityType Name="tblEVOUserNotificationSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOUserID" Type="Int32" Nullable="false" />
+    <Property Name="NotificationType" Type="Byte" Nullable="false" />
+    <Property Name="EVOLibraryID" Type="Int32" />
+    <Property Name="EVOEventID" Type="Int32" />
+    <Property Name="IsNotificationRequired" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tblEVOLibrary" Relationship="Self.FK_tblEVOUserNotificationSettings_tblEVOLibrary" FromRole="tblEVOUserNotificationSettings" ToRole="tblEVOLibrary" />
+    <NavigationProperty Name="tblEVOLibraryEvent" Relationship="Self.FK_tblEVOUserNotificationSettings_tblEVOLibraryEvent" FromRole="tblEVOUserNotificationSettings" ToRole="tblEVOLibraryEvent" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVOUserNotificationSettings_tblEVOUser" FromRole="tblEVOUserNotificationSettings" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVOUserOrderInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CartId" Type="Int32" />
+    <Property Name="ItemTypeId" Type="Int16" />
+    <Property Name="ItemId" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="OrderId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="AddOnSubType" Type="Int32" />
+    <NavigationProperty Name="tblEVOUserCart" Relationship="Self.FK__tblEVOUse__CartI__34E8D562" FromRole="tblEVOUserOrderInfo" ToRole="tblEVOUserCart" />
+    <NavigationProperty Name="tblEVOUserCart1" Relationship="Self.FK__tblEVOUse__CartI__783FB9D5" FromRole="tblEVOUserOrderInfo" ToRole="tblEVOUserCart" />
+  </EntityType>
+  <EntityType Name="tblEVOUserPackageMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="PackageId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="PurchaseOrderId" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="SubscribedOn" Type="DateTime" Precision="3" />
+    <Property Name="ExpireOnUTC" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblEVOPayments" Relationship="Self.FK_tblEVOPayment_tblEVOUser" FromRole="tblEVOUserPackageMapping" ToRole="tblEVOPayment" />
+    <NavigationProperty Name="tblEvoSalesTaxRates" Relationship="Self.FK_tblEvoSalesTaxRate_tblEVOUserPackageMapping" FromRole="tblEVOUserPackageMapping" ToRole="tblEvoSalesTaxRate" />
+    <NavigationProperty Name="tblEVOSubscriptionCancelRequests" Relationship="Self.FK_tblEVOSubscriptionCancelRequest_tblEVOUserPackageMapping" FromRole="tblEVOUserPackageMapping" ToRole="tblEVOSubscriptionCancelRequest" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVOUserPackageMapping_tblEVOUser" FromRole="tblEVOUserPackageMapping" ToRole="tblEVOUser" />
+    <NavigationProperty Name="tblEVOUserRoleMappings" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOUserPackageMapping" FromRole="tblEVOUserPackageMapping" ToRole="tblEVOUserRoleMapping" />
+  </EntityType>
+  <EntityType Name="tblEVOUserPackageMappingHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="PackageId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblEVOUserPlaylist">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOUserID" Type="Int32" Nullable="false" />
+    <Property Name="EvoMediaID" Type="Int32" Nullable="false" />
+    <Property Name="SortOrder" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVOUserPlaylist_tblEVOMedia" FromRole="tblEVOUserPlaylist" ToRole="tblEVOMedia" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVOUserPlaylist_tblEVOUser" FromRole="tblEVOUserPlaylist" ToRole="tblEVOUser" />
+  </EntityType>
+  <EntityType Name="tblEVOUserRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEVOUserRoleMappings" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOUserRole" FromRole="tblEVOUserRole" ToRole="tblEVOUserRoleMapping" />
+  </EntityType>
+  <EntityType Name="tblEVOUserRoleMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EVOUserID" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="EVOLibraryID" Type="Int32" />
+    <Property Name="EVOEventID" Type="Int32" />
+    <Property Name="EVOMediaID" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsAccepted" Type="Boolean" />
+    <Property Name="UserPackageId" Type="Int32" />
+    <NavigationProperty Name="tblEVOLibrary" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOLibrary" FromRole="tblEVOUserRoleMapping" ToRole="tblEVOLibrary" />
+    <NavigationProperty Name="tblEVOLibraryEvent" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOLibraryEvent" FromRole="tblEVOUserRoleMapping" ToRole="tblEVOLibraryEvent" />
+    <NavigationProperty Name="tblEVOMedia" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOMedia" FromRole="tblEVOUserRoleMapping" ToRole="tblEVOMedia" />
+    <NavigationProperty Name="tblEVOUser" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOUser" FromRole="tblEVOUserRoleMapping" ToRole="tblEVOUser" />
+    <NavigationProperty Name="tblEVOUserPackageMapping" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOUserPackageMapping" FromRole="tblEVOUserRoleMapping" ToRole="tblEVOUserPackageMapping" />
+    <NavigationProperty Name="tblEVOUserRole" Relationship="Self.FK_tblEVOUserRoleMapping_tblEVOUserRole" FromRole="tblEVOUserRoleMapping" ToRole="tblEVOUserRole" />
+  </EntityType>
+  <EntityType Name="t1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblEVOEmailTemplateold">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Priority" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblEVOFileQueue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EventTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="UserPackageId" Type="Int32" />
+    <Property Name="UploadStatus" Type="Int32" />
+    <Property Name="FileSizeInMB" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EvoMediaID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="EmailOccurence" Type="Int32" />
+    <Property Name="ZipFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblEVOFileQueueHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EventTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="UserPackageId" Type="Int32" />
+    <Property Name="UploadStatus" Type="Int32" />
+    <Property Name="FileSizeInMB" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EvoMediaID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TestTable">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_tblEVOAddOn_tblEVOAddOnType">
+    <End Role="tblEVOAddOnType" Type="Self.tblEVOAddOnType" Multiplicity="0..1" />
+    <End Role="tblEVOAddOn" Type="Self.tblEVOAddOn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOAddOnType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOAddOn">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOHeroContent_tblEVOCDNPlayer">
+    <End Role="tblEVOCDNPlayer" Type="Self.tblEVOCDNPlayer" Multiplicity="0..1" />
+    <End Role="tblEVOHeroContent" Type="Self.tblEVOHeroContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOCDNPlayer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOHeroContent">
+        <PropertyRef Name="CDNPlayerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOMedia_tblEVOCDNPlayer">
+    <End Role="tblEVOCDNPlayer" Type="Self.tblEVOCDNPlayer" Multiplicity="0..1" />
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOCDNPlayer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOMedia">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOHeroContent_tblEVOCDNProvider">
+    <End Role="tblEVOCDNProvider" Type="Self.tblEVOCDNProvider" Multiplicity="0..1" />
+    <End Role="tblEVOHeroContent" Type="Self.tblEVOHeroContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOCDNProvider">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOHeroContent">
+        <PropertyRef Name="CDNID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOMediaResource_tblEVOCDNProvider">
+    <End Role="tblEVOCDNProvider" Type="Self.tblEVOCDNProvider" Multiplicity="0..1" />
+    <End Role="tblEVOMediaResource" Type="Self.tblEVOMediaResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOCDNProvider">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOMediaResource">
+        <PropertyRef Name="CDNId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOChatMessage_tblEVOChat">
+    <End Role="tblEVOChat" Type="Self.tblEVOChat" Multiplicity="1" />
+    <End Role="tblEVOChatMessage" Type="Self.tblEVOChatMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOChat">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOChatMessage">
+        <PropertyRef Name="ChatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUser_tblEVOCity">
+    <End Role="tblEVOCity" Type="Self.tblEVOCity" Multiplicity="0..1" />
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOCity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUser">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOStateFull_tblEVOCountryFull">
+    <End Role="tblEVOCountry" Type="Self.tblEVOCountry" Multiplicity="1" />
+    <End Role="tblEVOState" Type="Self.tblEVOState" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOCountry">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOState">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUser_tblEVOCountry">
+    <End Role="tblEVOCountry" Type="Self.tblEVOCountry" Multiplicity="0..1" />
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOCountry">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUser">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOEventVisitUserLocation_tblEVOEventid">
+    <End Role="tblEVOLibraryEvent" Type="Self.tblEVOLibraryEvent" Multiplicity="0..1" />
+    <End Role="tblEVOEventVisitUserLocation" Type="Self.tblEVOEventVisitUserLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibraryEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOEventVisitUserLocation">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOEventVisitUserLocation_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="0..1" />
+    <End Role="tblEVOEventVisitUserLocation" Type="Self.tblEVOEventVisitUserLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOEventVisitUserLocation">
+        <PropertyRef Name="EVOUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOFavorite_tblEVOLibraryEvent">
+    <End Role="tblEVOLibraryEvent" Type="Self.tblEVOLibraryEvent" Multiplicity="0..1" />
+    <End Role="tblEVOFavorite" Type="Self.tblEVOFavorite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibraryEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOFavorite">
+        <PropertyRef Name="EVOEventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOFavorite_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="0..1" />
+    <End Role="tblEVOFavorite" Type="Self.tblEVOFavorite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOFavorite">
+        <PropertyRef Name="MediaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOFavorite_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="1" />
+    <End Role="tblEVOFavorite" Type="Self.tblEVOFavorite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOFavorite">
+        <PropertyRef Name="EVOUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOPricing_tblEVOFeature">
+    <End Role="tblEVOFeature" Type="Self.tblEVOFeature" Multiplicity="0..1" />
+    <End Role="tblEVOPricing" Type="Self.tblEVOPricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOFeature">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOPricing">
+        <PropertyRef Name="EVOFeatureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOFollowing_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="0..1" />
+    <End Role="tblEVOFollowing" Type="Self.tblEVOFollowing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOFollowing">
+        <PropertyRef Name="EVOUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOHeroContent_tblEVOLibrary">
+    <End Role="tblEVOLibrary" Type="Self.tblEVOLibrary" Multiplicity="0..1" />
+    <End Role="tblEVOHeroContent" Type="Self.tblEVOHeroContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibrary">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOHeroContent">
+        <PropertyRef Name="EVOLibraryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOHeroContent_tblEVOLibraryEvent">
+    <End Role="tblEVOLibraryEvent" Type="Self.tblEVOLibraryEvent" Multiplicity="0..1" />
+    <End Role="tblEVOHeroContent" Type="Self.tblEVOHeroContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibraryEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOHeroContent">
+        <PropertyRef Name="EVOEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOHeroContent_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="0..1" />
+    <End Role="tblEVOHeroContent" Type="Self.tblEVOHeroContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOHeroContent">
+        <PropertyRef Name="MediaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVONotification_tblEVOInstance">
+    <End Role="tblEVOLibrary" Type="Self.tblEVOLibrary" Multiplicity="0..1" />
+    <End Role="tblEVONotification" Type="Self.tblEVONotification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibrary">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVONotification">
+        <PropertyRef Name="EVOLibraryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOShareTracking_tblEVOLibrary">
+    <End Role="tblEVOLibrary" Type="Self.tblEVOLibrary" Multiplicity="0..1" />
+    <End Role="tblEVOShareTracking" Type="Self.tblEVOShareTracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibrary">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOShareTracking">
+        <PropertyRef Name="EVOLibraryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserNotificationSettings_tblEVOLibrary">
+    <End Role="tblEVOLibrary" Type="Self.tblEVOLibrary" Multiplicity="0..1" />
+    <End Role="tblEVOUserNotificationSettings" Type="Self.tblEVOUserNotificationSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibrary">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserNotificationSettings">
+        <PropertyRef Name="EVOLibraryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserRoleMapping_tblEVOLibrary">
+    <End Role="tblEVOLibrary" Type="Self.tblEVOLibrary" Multiplicity="0..1" />
+    <End Role="tblEVOUserRoleMapping" Type="Self.tblEVOUserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibrary">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserRoleMapping">
+        <PropertyRef Name="EVOLibraryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVONotification_tblEVOInstanceLibrary">
+    <End Role="tblEVOLibraryEvent" Type="Self.tblEVOLibraryEvent" Multiplicity="0..1" />
+    <End Role="tblEVONotification" Type="Self.tblEVONotification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibraryEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVONotification">
+        <PropertyRef Name="EVOEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOShareTracking_tblEVOLibraryEvent">
+    <End Role="tblEVOLibraryEvent" Type="Self.tblEVOLibraryEvent" Multiplicity="0..1" />
+    <End Role="tblEVOShareTracking" Type="Self.tblEVOShareTracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibraryEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOShareTracking">
+        <PropertyRef Name="EVOEventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOSpeakerEventMapping_tblEVOLibraryEvent">
+    <End Role="tblEVOLibraryEvent" Type="Self.tblEVOLibraryEvent" Multiplicity="1" />
+    <End Role="tblEVOSpeakerEventMapping" Type="Self.tblEVOSpeakerEventMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibraryEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOSpeakerEventMapping">
+        <PropertyRef Name="EVOEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserNotificationSettings_tblEVOLibraryEvent">
+    <End Role="tblEVOLibraryEvent" Type="Self.tblEVOLibraryEvent" Multiplicity="0..1" />
+    <End Role="tblEVOUserNotificationSettings" Type="Self.tblEVOUserNotificationSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibraryEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserNotificationSettings">
+        <PropertyRef Name="EVOEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserRoleMapping_tblEVOLibraryEvent">
+    <End Role="tblEVOLibraryEvent" Type="Self.tblEVOLibraryEvent" Multiplicity="0..1" />
+    <End Role="tblEVOUserRoleMapping" Type="Self.tblEVOUserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOLibraryEvent">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserRoleMapping">
+        <PropertyRef Name="EVOEventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOMediaApproverMapping_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="1" />
+    <End Role="tblEVOMediaApproverMapping" Type="Self.tblEVOMediaApproverMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOMediaApproverMapping">
+        <PropertyRef Name="EVOMediaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOMediaCustomField_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="1" />
+    <End Role="tblEVOMediaCustomField" Type="Self.tblEVOMediaCustomField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOMediaCustomField">
+        <PropertyRef Name="EVOMediaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOMediaResource_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="0..1" />
+    <End Role="tblEVOMediaResource" Type="Self.tblEVOMediaResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOMediaResource">
+        <PropertyRef Name="EVOMediaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOMediaTracking_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="1" />
+    <End Role="tblEVOMediaTracking" Type="Self.tblEVOMediaTracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOMediaTracking">
+        <PropertyRef Name="EVOMediaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVONotification_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="0..1" />
+    <End Role="tblEVONotification" Type="Self.tblEVONotification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVONotification">
+        <PropertyRef Name="EVOMediaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVORating_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="1" />
+    <End Role="tblEVORating" Type="Self.tblEVORating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVORating">
+        <PropertyRef Name="EVOMediaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOShareTracking_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="0..1" />
+    <End Role="tblEVOShareTracking" Type="Self.tblEVOShareTracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOShareTracking">
+        <PropertyRef Name="EVOMediaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOSpeakerMediaMapping_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="1" />
+    <End Role="tblEVOSpeakerMediaMapping" Type="Self.tblEVOSpeakerMediaMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOSpeakerMediaMapping">
+        <PropertyRef Name="EVOMediaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserPlaylist_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="1" />
+    <End Role="tblEVOUserPlaylist" Type="Self.tblEVOUserPlaylist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserPlaylist">
+        <PropertyRef Name="EvoMediaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserRoleMapping_tblEVOMedia">
+    <End Role="tblEVOMedia" Type="Self.tblEVOMedia" Multiplicity="0..1" />
+    <End Role="tblEVOUserRoleMapping" Type="Self.tblEVOUserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMedia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserRoleMapping">
+        <PropertyRef Name="EVOMediaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOMediaDownloadTracking_tblEVOMediaDownloadTracking">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="0..1" />
+    <End Role="tblEVOMediaDownloadTracking" Type="Self.tblEVOMediaDownloadTracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOMediaDownloadTracking">
+        <PropertyRef Name="EVOUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOMediaDownloadTracking_tblEVOMediaResource">
+    <End Role="tblEVOMediaResource" Type="Self.tblEVOMediaResource" Multiplicity="1" />
+    <End Role="tblEVOMediaDownloadTracking" Type="Self.tblEVOMediaDownloadTracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOMediaResource">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOMediaDownloadTracking">
+        <PropertyRef Name="MediaResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOMediaTracking_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="0..1" />
+    <End Role="tblEVOMediaTracking" Type="Self.tblEVOMediaTracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOMediaTracking">
+        <PropertyRef Name="EVOUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVONotification_tblEVONotificationType">
+    <End Role="tblEVONotificationType" Type="Self.tblEVONotificationType" Multiplicity="0..1" />
+    <End Role="tblEVONotification" Type="Self.tblEVONotification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVONotificationType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVONotification">
+        <PropertyRef Name="EVONotificationTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVONotification_tblEVOSpeaker">
+    <End Role="tblEVOSpeaker" Type="Self.tblEVOSpeaker" Multiplicity="0..1" />
+    <End Role="tblEVONotification" Type="Self.tblEVONotification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOSpeaker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblEVONotification">
+        <PropertyRef Name="EVOSpeakerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVONotification_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="0..1" />
+    <End Role="tblEVONotification" Type="Self.tblEVONotification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVONotification">
+        <PropertyRef Name="EVOUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOPayment_tblEVOPayment">
+    <End Role="tblEVOPromoCode" Type="Self.tblEVOPromoCode" Multiplicity="0..1" />
+    <End Role="tblEVOPayment" Type="Self.tblEVOPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOPromoCode">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOPayment">
+        <PropertyRef Name="PromoCodeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOPayment_tblEVOPaymentType">
+    <End Role="tblEVOPaymentType" Type="Self.tblEVOPaymentType" Multiplicity="1" />
+    <End Role="tblEVOPayment" Type="Self.tblEVOPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOPaymentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblEVOPayment">
+        <PropertyRef Name="PaymentTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOPayment_tblEVOUser">
+    <End Role="tblEVOUserPackageMapping" Type="Self.tblEVOUserPackageMapping" Multiplicity="1" />
+    <End Role="tblEVOPayment" Type="Self.tblEVOPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUserPackageMapping">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblEVOPayment">
+        <PropertyRef Name="UserPackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVORating_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="0..1" />
+    <End Role="tblEVORating" Type="Self.tblEVORating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVORating">
+        <PropertyRef Name="EVOUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEvoSalesTaxRate_tblEVOUserPackageMapping">
+    <End Role="tblEVOUserPackageMapping" Type="Self.tblEVOUserPackageMapping" Multiplicity="0..1" />
+    <End Role="tblEvoSalesTaxRate" Type="Self.tblEvoSalesTaxRate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUserPackageMapping">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblEvoSalesTaxRate">
+        <PropertyRef Name="UserPackageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOShareTracking_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="0..1" />
+    <End Role="tblEVOShareTracking" Type="Self.tblEVOShareTracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOShareTracking">
+        <PropertyRef Name="EVOUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOSpeakerEventMapping_tblEVOSpeaker">
+    <End Role="tblEVOSpeaker" Type="Self.tblEVOSpeaker" Multiplicity="1" />
+    <End Role="tblEVOSpeakerEventMapping" Type="Self.tblEVOSpeakerEventMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOSpeaker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblEVOSpeakerEventMapping">
+        <PropertyRef Name="EVOSpeakerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOSpeakerMediaMapping_tblEVOSpeaker">
+    <End Role="tblEVOSpeaker" Type="Self.tblEVOSpeaker" Multiplicity="1" />
+    <End Role="tblEVOSpeakerMediaMapping" Type="Self.tblEVOSpeakerMediaMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOSpeaker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblEVOSpeakerMediaMapping">
+        <PropertyRef Name="EVOSpeakerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUser_tblEVOState">
+    <End Role="tblEVOState" Type="Self.tblEVOState" Multiplicity="0..1" />
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblEVOUser">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOSubscriptionCancelRequest_tblEVOUserPackageMapping">
+    <End Role="tblEVOUserPackageMapping" Type="Self.tblEVOUserPackageMapping" Multiplicity="1" />
+    <End Role="tblEVOSubscriptionCancelRequest" Type="Self.tblEVOSubscriptionCancelRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUserPackageMapping">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblEVOSubscriptionCancelRequest">
+        <PropertyRef Name="UserPackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserAuthorizedAccount_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="0..1" />
+    <End Role="tblEVOUserAuthorizedAccount" Type="Self.tblEVOUserAuthorizedAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserAuthorizedAccount">
+        <PropertyRef Name="EVOUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserNotificationSettings_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="1" />
+    <End Role="tblEVOUserNotificationSettings" Type="Self.tblEVOUserNotificationSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserNotificationSettings">
+        <PropertyRef Name="EVOUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserPackageMapping_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="1" />
+    <End Role="tblEVOUserPackageMapping" Type="Self.tblEVOUserPackageMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserPackageMapping">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserPlaylist_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="1" />
+    <End Role="tblEVOUserPlaylist" Type="Self.tblEVOUserPlaylist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserPlaylist">
+        <PropertyRef Name="EVOUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserRoleMapping_tblEVOUser">
+    <End Role="tblEVOUser" Type="Self.tblEVOUser" Multiplicity="1" />
+    <End Role="tblEVOUserRoleMapping" Type="Self.tblEVOUserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserRoleMapping">
+        <PropertyRef Name="EVOUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblEVOUse__CartI__34E8D562">
+    <End Role="tblEVOUserCart" Type="Self.tblEVOUserCart" Multiplicity="0..1" />
+    <End Role="tblEVOUserOrderInfo" Type="Self.tblEVOUserOrderInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUserCart">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserOrderInfo">
+        <PropertyRef Name="CartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblEVOUse__CartI__783FB9D5">
+    <End Role="tblEVOUserCart" Type="Self.tblEVOUserCart" Multiplicity="0..1" />
+    <End Role="tblEVOUserOrderInfo" Type="Self.tblEVOUserOrderInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUserCart">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserOrderInfo">
+        <PropertyRef Name="CartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserRoleMapping_tblEVOUserPackageMapping">
+    <End Role="tblEVOUserPackageMapping" Type="Self.tblEVOUserPackageMapping" Multiplicity="0..1" />
+    <End Role="tblEVOUserRoleMapping" Type="Self.tblEVOUserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUserPackageMapping">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblEVOUserRoleMapping">
+        <PropertyRef Name="UserPackageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEVOUserRoleMapping_tblEVOUserRole">
+    <End Role="tblEVOUserRole" Type="Self.tblEVOUserRole" Multiplicity="1" />
+    <End Role="tblEVOUserRoleMapping" Type="Self.tblEVOUserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEVOUserRole">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEVOUserRoleMapping">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TDEVOV2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ELMAH_Error" EntityType="Self.ELMAH_Error" />
+    <EntitySet Name="IPDatas" EntityType="Self.IPData" />
+    <EntitySet Name="Logs" EntityType="Self.Log" />
+    <EntitySet Name="tblEmailAttachments" EntityType="Self.tblEmailAttachment" />
+    <EntitySet Name="tblEVOAboutFeatures" EntityType="Self.tblEVOAboutFeature" />
+    <EntitySet Name="tblEVOAddOns" EntityType="Self.tblEVOAddOn" />
+    <EntitySet Name="tblEVOAddOnTypes" EntityType="Self.tblEVOAddOnType" />
+    <EntitySet Name="tblEVOApiUsers" EntityType="Self.tblEVOApiUser" />
+    <EntitySet Name="tblEVOBroadcastLocations" EntityType="Self.tblEVOBroadcastLocation" />
+    <EntitySet Name="tblEVOBulkInviteUploads" EntityType="Self.tblEVOBulkInviteUpload" />
+    <EntitySet Name="tblEVOCDNPlayers" EntityType="Self.tblEVOCDNPlayer" />
+    <EntitySet Name="tblEVOCDNProviders" EntityType="Self.tblEVOCDNProvider" />
+    <EntitySet Name="tblEVOChats" EntityType="Self.tblEVOChat" />
+    <EntitySet Name="tblEVOChatMessages" EntityType="Self.tblEVOChatMessage" />
+    <EntitySet Name="tblEVOCities" EntityType="Self.tblEVOCity" />
+    <EntitySet Name="tblEVOContactUs" EntityType="Self.tblEVOContactU" />
+    <EntitySet Name="tblEVOCountries" EntityType="Self.tblEVOCountry" />
+    <EntitySet Name="tblEVOCustomResources" EntityType="Self.tblEVOCustomResource" />
+    <EntitySet Name="tblEVOEmailSents" EntityType="Self.tblEVOEmailSent" />
+    <EntitySet Name="tblEVOEmailSentToInvites" EntityType="Self.tblEVOEmailSentToInvite" />
+    <EntitySet Name="tblEVOEmailTemplates" EntityType="Self.tblEVOEmailTemplate" />
+    <EntitySet Name="tblEVOEventTracks" EntityType="Self.tblEVOEventTrack" />
+    <EntitySet Name="tblEVOEventVisitUserLocations" EntityType="Self.tblEVOEventVisitUserLocation" />
+    <EntitySet Name="tblEVOFAQs" EntityType="Self.tblEVOFAQ" />
+    <EntitySet Name="tblEVOFavorites" EntityType="Self.tblEVOFavorite" />
+    <EntitySet Name="tblEVOFeatures" EntityType="Self.tblEVOFeature" />
+    <EntitySet Name="tblEVOFollowings" EntityType="Self.tblEVOFollowing" />
+    <EntitySet Name="tblEVOFonts" EntityType="Self.tblEVOFont" />
+    <EntitySet Name="tblEVOHeroContents" EntityType="Self.tblEVOHeroContent" />
+    <EntitySet Name="tblEVOLibraries" EntityType="Self.tblEVOLibrary" />
+    <EntitySet Name="tblEVOLibraryEvents" EntityType="Self.tblEVOLibraryEvent" />
+    <EntitySet Name="tblEVOMedias" EntityType="Self.tblEVOMedia" />
+    <EntitySet Name="tblEVOMediaApproverMappings" EntityType="Self.tblEVOMediaApproverMapping" />
+    <EntitySet Name="tblEVOMediaCustomFields" EntityType="Self.tblEVOMediaCustomField" />
+    <EntitySet Name="tblEVOMediaDownloadTrackings" EntityType="Self.tblEVOMediaDownloadTracking" />
+    <EntitySet Name="tblEVOMediaResources" EntityType="Self.tblEVOMediaResource" />
+    <EntitySet Name="tblEVOMediaTrackings" EntityType="Self.tblEVOMediaTracking" />
+    <EntitySet Name="tblEVOMediaTypes" EntityType="Self.tblEVOMediaType" />
+    <EntitySet Name="tblEVONotifications" EntityType="Self.tblEVONotification" />
+    <EntitySet Name="tblEVONotificationTypes" EntityType="Self.tblEVONotificationType" />
+    <EntitySet Name="tblEVOPackages" EntityType="Self.tblEVOPackage" />
+    <EntitySet Name="tblEVOPackageFeatures" EntityType="Self.tblEVOPackageFeature" />
+    <EntitySet Name="tblEVOPackageFeatureMappings" EntityType="Self.tblEVOPackageFeatureMapping" />
+    <EntitySet Name="tblEVOPackagePermissions" EntityType="Self.tblEVOPackagePermission" />
+    <EntitySet Name="tblEVOPackageUpgradeRequests" EntityType="Self.tblEVOPackageUpgradeRequest" />
+    <EntitySet Name="tblEVOPayments" EntityType="Self.tblEVOPayment" />
+    <EntitySet Name="tblEVOPaymentTypes" EntityType="Self.tblEVOPaymentType" />
+    <EntitySet Name="tblEVOPolls" EntityType="Self.tblEVOPoll" />
+    <EntitySet Name="tblEVOPollOptions" EntityType="Self.tblEVOPollOption" />
+    <EntitySet Name="tblEVOPollResults" EntityType="Self.tblEVOPollResult" />
+    <EntitySet Name="tblEVOPricings" EntityType="Self.tblEVOPricing" />
+    <EntitySet Name="tblEVOPromoCodes" EntityType="Self.tblEVOPromoCode" />
+    <EntitySet Name="tblEVOPurchaseOrders" EntityType="Self.tblEVOPurchaseOrder" />
+    <EntitySet Name="tblEVORatings" EntityType="Self.tblEVORating" />
+    <EntitySet Name="tblEvoSalesTaxRates" EntityType="Self.tblEvoSalesTaxRate" />
+    <EntitySet Name="tblEVOShareTrackings" EntityType="Self.tblEVOShareTracking" />
+    <EntitySet Name="tblEVOSlideImageResources" EntityType="Self.tblEVOSlideImageResource" />
+    <EntitySet Name="tblEVOSpeakers" EntityType="Self.tblEVOSpeaker" />
+    <EntitySet Name="tblEVOSpeakerEventMappings" EntityType="Self.tblEVOSpeakerEventMapping" />
+    <EntitySet Name="tblEVOSpeakerMediaMappings" EntityType="Self.tblEVOSpeakerMediaMapping" />
+    <EntitySet Name="tblEVOStates" EntityType="Self.tblEVOState" />
+    <EntitySet Name="tblEVOStatus" EntityType="Self.tblEVOStatu" />
+    <EntitySet Name="tblEVOSubscriptionCancelRequests" EntityType="Self.tblEVOSubscriptionCancelRequest" />
+    <EntitySet Name="tblEVOThemeCustomizations" EntityType="Self.tblEVOThemeCustomization" />
+    <EntitySet Name="tblEVOThemePreviews" EntityType="Self.tblEVOThemePreview" />
+    <EntitySet Name="tblEVOTimeZones" EntityType="Self.tblEVOTimeZone" />
+    <EntitySet Name="tblEVOTimeZonesWinters" EntityType="Self.tblEVOTimeZonesWinter" />
+    <EntitySet Name="tblEVOUsers" EntityType="Self.tblEVOUser" />
+    <EntitySet Name="tblEVOUserAuthorizedAccounts" EntityType="Self.tblEVOUserAuthorizedAccount" />
+    <EntitySet Name="tblEVOUserCarts" EntityType="Self.tblEVOUserCart" />
+    <EntitySet Name="tblEVOUserNotificationSettings" EntityType="Self.tblEVOUserNotificationSetting" />
+    <EntitySet Name="tblEVOUserOrderInfoes" EntityType="Self.tblEVOUserOrderInfo" />
+    <EntitySet Name="tblEVOUserPackageMappings" EntityType="Self.tblEVOUserPackageMapping" />
+    <EntitySet Name="tblEVOUserPackageMappingHistories" EntityType="Self.tblEVOUserPackageMappingHistory" />
+    <EntitySet Name="tblEVOUserPlaylists" EntityType="Self.tblEVOUserPlaylist" />
+    <EntitySet Name="tblEVOUserRoles" EntityType="Self.tblEVOUserRole" />
+    <EntitySet Name="tblEVOUserRoleMappings" EntityType="Self.tblEVOUserRoleMapping" />
+    <EntitySet Name="t1" EntityType="Self.t1" />
+    <EntitySet Name="tblEVOEmailTemplateolds" EntityType="Self.tblEVOEmailTemplateold" />
+    <EntitySet Name="tblEVOFileQueues" EntityType="Self.tblEVOFileQueue" />
+    <EntitySet Name="tblEVOFileQueueHistories" EntityType="Self.tblEVOFileQueueHistory" />
+    <EntitySet Name="TestTables" EntityType="Self.TestTable" />
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+    <AssociationSet Name="FK_tblEVOAddOn_tblEVOAddOnType" Association="Self.FK_tblEVOAddOn_tblEVOAddOnType">
+      <End Role="tblEVOAddOnType" EntitySet="tblEVOAddOnTypes" />
+      <End Role="tblEVOAddOn" EntitySet="tblEVOAddOns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOHeroContent_tblEVOCDNPlayer" Association="Self.FK_tblEVOHeroContent_tblEVOCDNPlayer">
+      <End Role="tblEVOCDNPlayer" EntitySet="tblEVOCDNPlayers" />
+      <End Role="tblEVOHeroContent" EntitySet="tblEVOHeroContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOMedia_tblEVOCDNPlayer" Association="Self.FK_tblEVOMedia_tblEVOCDNPlayer">
+      <End Role="tblEVOCDNPlayer" EntitySet="tblEVOCDNPlayers" />
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOHeroContent_tblEVOCDNProvider" Association="Self.FK_tblEVOHeroContent_tblEVOCDNProvider">
+      <End Role="tblEVOCDNProvider" EntitySet="tblEVOCDNProviders" />
+      <End Role="tblEVOHeroContent" EntitySet="tblEVOHeroContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOMediaResource_tblEVOCDNProvider" Association="Self.FK_tblEVOMediaResource_tblEVOCDNProvider">
+      <End Role="tblEVOCDNProvider" EntitySet="tblEVOCDNProviders" />
+      <End Role="tblEVOMediaResource" EntitySet="tblEVOMediaResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOChatMessage_tblEVOChat" Association="Self.FK_tblEVOChatMessage_tblEVOChat">
+      <End Role="tblEVOChat" EntitySet="tblEVOChats" />
+      <End Role="tblEVOChatMessage" EntitySet="tblEVOChatMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUser_tblEVOCity" Association="Self.FK_tblEVOUser_tblEVOCity">
+      <End Role="tblEVOCity" EntitySet="tblEVOCities" />
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOStateFull_tblEVOCountryFull" Association="Self.FK_tblEVOStateFull_tblEVOCountryFull">
+      <End Role="tblEVOCountry" EntitySet="tblEVOCountries" />
+      <End Role="tblEVOState" EntitySet="tblEVOStates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUser_tblEVOCountry" Association="Self.FK_tblEVOUser_tblEVOCountry">
+      <End Role="tblEVOCountry" EntitySet="tblEVOCountries" />
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOEventVisitUserLocation_tblEVOEventid" Association="Self.FK_tblEVOEventVisitUserLocation_tblEVOEventid">
+      <End Role="tblEVOLibraryEvent" EntitySet="tblEVOLibraryEvents" />
+      <End Role="tblEVOEventVisitUserLocation" EntitySet="tblEVOEventVisitUserLocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOEventVisitUserLocation_tblEVOUser" Association="Self.FK_tblEVOEventVisitUserLocation_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVOEventVisitUserLocation" EntitySet="tblEVOEventVisitUserLocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOFavorite_tblEVOLibraryEvent" Association="Self.FK_tblEVOFavorite_tblEVOLibraryEvent">
+      <End Role="tblEVOLibraryEvent" EntitySet="tblEVOLibraryEvents" />
+      <End Role="tblEVOFavorite" EntitySet="tblEVOFavorites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOFavorite_tblEVOMedia" Association="Self.FK_tblEVOFavorite_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVOFavorite" EntitySet="tblEVOFavorites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOFavorite_tblEVOUser" Association="Self.FK_tblEVOFavorite_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVOFavorite" EntitySet="tblEVOFavorites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOPricing_tblEVOFeature" Association="Self.FK_tblEVOPricing_tblEVOFeature">
+      <End Role="tblEVOFeature" EntitySet="tblEVOFeatures" />
+      <End Role="tblEVOPricing" EntitySet="tblEVOPricings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOFollowing_tblEVOUser" Association="Self.FK_tblEVOFollowing_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVOFollowing" EntitySet="tblEVOFollowings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOHeroContent_tblEVOLibrary" Association="Self.FK_tblEVOHeroContent_tblEVOLibrary">
+      <End Role="tblEVOLibrary" EntitySet="tblEVOLibraries" />
+      <End Role="tblEVOHeroContent" EntitySet="tblEVOHeroContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOHeroContent_tblEVOLibraryEvent" Association="Self.FK_tblEVOHeroContent_tblEVOLibraryEvent">
+      <End Role="tblEVOLibraryEvent" EntitySet="tblEVOLibraryEvents" />
+      <End Role="tblEVOHeroContent" EntitySet="tblEVOHeroContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOHeroContent_tblEVOMedia" Association="Self.FK_tblEVOHeroContent_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVOHeroContent" EntitySet="tblEVOHeroContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVONotification_tblEVOInstance" Association="Self.FK_tblEVONotification_tblEVOInstance">
+      <End Role="tblEVOLibrary" EntitySet="tblEVOLibraries" />
+      <End Role="tblEVONotification" EntitySet="tblEVONotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOShareTracking_tblEVOLibrary" Association="Self.FK_tblEVOShareTracking_tblEVOLibrary">
+      <End Role="tblEVOLibrary" EntitySet="tblEVOLibraries" />
+      <End Role="tblEVOShareTracking" EntitySet="tblEVOShareTrackings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserNotificationSettings_tblEVOLibrary" Association="Self.FK_tblEVOUserNotificationSettings_tblEVOLibrary">
+      <End Role="tblEVOLibrary" EntitySet="tblEVOLibraries" />
+      <End Role="tblEVOUserNotificationSettings" EntitySet="tblEVOUserNotificationSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserRoleMapping_tblEVOLibrary" Association="Self.FK_tblEVOUserRoleMapping_tblEVOLibrary">
+      <End Role="tblEVOLibrary" EntitySet="tblEVOLibraries" />
+      <End Role="tblEVOUserRoleMapping" EntitySet="tblEVOUserRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVONotification_tblEVOInstanceLibrary" Association="Self.FK_tblEVONotification_tblEVOInstanceLibrary">
+      <End Role="tblEVOLibraryEvent" EntitySet="tblEVOLibraryEvents" />
+      <End Role="tblEVONotification" EntitySet="tblEVONotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOShareTracking_tblEVOLibraryEvent" Association="Self.FK_tblEVOShareTracking_tblEVOLibraryEvent">
+      <End Role="tblEVOLibraryEvent" EntitySet="tblEVOLibraryEvents" />
+      <End Role="tblEVOShareTracking" EntitySet="tblEVOShareTrackings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOSpeakerEventMapping_tblEVOLibraryEvent" Association="Self.FK_tblEVOSpeakerEventMapping_tblEVOLibraryEvent">
+      <End Role="tblEVOLibraryEvent" EntitySet="tblEVOLibraryEvents" />
+      <End Role="tblEVOSpeakerEventMapping" EntitySet="tblEVOSpeakerEventMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserNotificationSettings_tblEVOLibraryEvent" Association="Self.FK_tblEVOUserNotificationSettings_tblEVOLibraryEvent">
+      <End Role="tblEVOLibraryEvent" EntitySet="tblEVOLibraryEvents" />
+      <End Role="tblEVOUserNotificationSettings" EntitySet="tblEVOUserNotificationSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserRoleMapping_tblEVOLibraryEvent" Association="Self.FK_tblEVOUserRoleMapping_tblEVOLibraryEvent">
+      <End Role="tblEVOLibraryEvent" EntitySet="tblEVOLibraryEvents" />
+      <End Role="tblEVOUserRoleMapping" EntitySet="tblEVOUserRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOMediaApproverMapping_tblEVOMedia" Association="Self.FK_tblEVOMediaApproverMapping_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVOMediaApproverMapping" EntitySet="tblEVOMediaApproverMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOMediaCustomField_tblEVOMedia" Association="Self.FK_tblEVOMediaCustomField_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVOMediaCustomField" EntitySet="tblEVOMediaCustomFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOMediaResource_tblEVOMedia" Association="Self.FK_tblEVOMediaResource_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVOMediaResource" EntitySet="tblEVOMediaResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOMediaTracking_tblEVOMedia" Association="Self.FK_tblEVOMediaTracking_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVOMediaTracking" EntitySet="tblEVOMediaTrackings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVONotification_tblEVOMedia" Association="Self.FK_tblEVONotification_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVONotification" EntitySet="tblEVONotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVORating_tblEVOMedia" Association="Self.FK_tblEVORating_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVORating" EntitySet="tblEVORatings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOShareTracking_tblEVOMedia" Association="Self.FK_tblEVOShareTracking_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVOShareTracking" EntitySet="tblEVOShareTrackings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOSpeakerMediaMapping_tblEVOMedia" Association="Self.FK_tblEVOSpeakerMediaMapping_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVOSpeakerMediaMapping" EntitySet="tblEVOSpeakerMediaMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserPlaylist_tblEVOMedia" Association="Self.FK_tblEVOUserPlaylist_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVOUserPlaylist" EntitySet="tblEVOUserPlaylists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserRoleMapping_tblEVOMedia" Association="Self.FK_tblEVOUserRoleMapping_tblEVOMedia">
+      <End Role="tblEVOMedia" EntitySet="tblEVOMedias" />
+      <End Role="tblEVOUserRoleMapping" EntitySet="tblEVOUserRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOMediaDownloadTracking_tblEVOMediaDownloadTracking" Association="Self.FK_tblEVOMediaDownloadTracking_tblEVOMediaDownloadTracking">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVOMediaDownloadTracking" EntitySet="tblEVOMediaDownloadTrackings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOMediaDownloadTracking_tblEVOMediaResource" Association="Self.FK_tblEVOMediaDownloadTracking_tblEVOMediaResource">
+      <End Role="tblEVOMediaResource" EntitySet="tblEVOMediaResources" />
+      <End Role="tblEVOMediaDownloadTracking" EntitySet="tblEVOMediaDownloadTrackings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOMediaTracking_tblEVOUser" Association="Self.FK_tblEVOMediaTracking_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVOMediaTracking" EntitySet="tblEVOMediaTrackings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVONotification_tblEVONotificationType" Association="Self.FK_tblEVONotification_tblEVONotificationType">
+      <End Role="tblEVONotificationType" EntitySet="tblEVONotificationTypes" />
+      <End Role="tblEVONotification" EntitySet="tblEVONotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVONotification_tblEVOSpeaker" Association="Self.FK_tblEVONotification_tblEVOSpeaker">
+      <End Role="tblEVOSpeaker" EntitySet="tblEVOSpeakers" />
+      <End Role="tblEVONotification" EntitySet="tblEVONotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVONotification_tblEVOUser" Association="Self.FK_tblEVONotification_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVONotification" EntitySet="tblEVONotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOPayment_tblEVOPayment" Association="Self.FK_tblEVOPayment_tblEVOPayment">
+      <End Role="tblEVOPromoCode" EntitySet="tblEVOPromoCodes" />
+      <End Role="tblEVOPayment" EntitySet="tblEVOPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOPayment_tblEVOPaymentType" Association="Self.FK_tblEVOPayment_tblEVOPaymentType">
+      <End Role="tblEVOPaymentType" EntitySet="tblEVOPaymentTypes" />
+      <End Role="tblEVOPayment" EntitySet="tblEVOPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOPayment_tblEVOUser" Association="Self.FK_tblEVOPayment_tblEVOUser">
+      <End Role="tblEVOUserPackageMapping" EntitySet="tblEVOUserPackageMappings" />
+      <End Role="tblEVOPayment" EntitySet="tblEVOPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVORating_tblEVOUser" Association="Self.FK_tblEVORating_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVORating" EntitySet="tblEVORatings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEvoSalesTaxRate_tblEVOUserPackageMapping" Association="Self.FK_tblEvoSalesTaxRate_tblEVOUserPackageMapping">
+      <End Role="tblEVOUserPackageMapping" EntitySet="tblEVOUserPackageMappings" />
+      <End Role="tblEvoSalesTaxRate" EntitySet="tblEvoSalesTaxRates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOShareTracking_tblEVOUser" Association="Self.FK_tblEVOShareTracking_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVOShareTracking" EntitySet="tblEVOShareTrackings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOSpeakerEventMapping_tblEVOSpeaker" Association="Self.FK_tblEVOSpeakerEventMapping_tblEVOSpeaker">
+      <End Role="tblEVOSpeaker" EntitySet="tblEVOSpeakers" />
+      <End Role="tblEVOSpeakerEventMapping" EntitySet="tblEVOSpeakerEventMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOSpeakerMediaMapping_tblEVOSpeaker" Association="Self.FK_tblEVOSpeakerMediaMapping_tblEVOSpeaker">
+      <End Role="tblEVOSpeaker" EntitySet="tblEVOSpeakers" />
+      <End Role="tblEVOSpeakerMediaMapping" EntitySet="tblEVOSpeakerMediaMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUser_tblEVOState" Association="Self.FK_tblEVOUser_tblEVOState">
+      <End Role="tblEVOState" EntitySet="tblEVOStates" />
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOSubscriptionCancelRequest_tblEVOUserPackageMapping" Association="Self.FK_tblEVOSubscriptionCancelRequest_tblEVOUserPackageMapping">
+      <End Role="tblEVOUserPackageMapping" EntitySet="tblEVOUserPackageMappings" />
+      <End Role="tblEVOSubscriptionCancelRequest" EntitySet="tblEVOSubscriptionCancelRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserAuthorizedAccount_tblEVOUser" Association="Self.FK_tblEVOUserAuthorizedAccount_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVOUserAuthorizedAccount" EntitySet="tblEVOUserAuthorizedAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserNotificationSettings_tblEVOUser" Association="Self.FK_tblEVOUserNotificationSettings_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVOUserNotificationSettings" EntitySet="tblEVOUserNotificationSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserPackageMapping_tblEVOUser" Association="Self.FK_tblEVOUserPackageMapping_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVOUserPackageMapping" EntitySet="tblEVOUserPackageMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserPlaylist_tblEVOUser" Association="Self.FK_tblEVOUserPlaylist_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVOUserPlaylist" EntitySet="tblEVOUserPlaylists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserRoleMapping_tblEVOUser" Association="Self.FK_tblEVOUserRoleMapping_tblEVOUser">
+      <End Role="tblEVOUser" EntitySet="tblEVOUsers" />
+      <End Role="tblEVOUserRoleMapping" EntitySet="tblEVOUserRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblEVOUse__CartI__34E8D562" Association="Self.FK__tblEVOUse__CartI__34E8D562">
+      <End Role="tblEVOUserCart" EntitySet="tblEVOUserCarts" />
+      <End Role="tblEVOUserOrderInfo" EntitySet="tblEVOUserOrderInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblEVOUse__CartI__783FB9D5" Association="Self.FK__tblEVOUse__CartI__783FB9D5">
+      <End Role="tblEVOUserCart" EntitySet="tblEVOUserCarts" />
+      <End Role="tblEVOUserOrderInfo" EntitySet="tblEVOUserOrderInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserRoleMapping_tblEVOUserPackageMapping" Association="Self.FK_tblEVOUserRoleMapping_tblEVOUserPackageMapping">
+      <End Role="tblEVOUserPackageMapping" EntitySet="tblEVOUserPackageMappings" />
+      <End Role="tblEVOUserRoleMapping" EntitySet="tblEVOUserRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEVOUserRoleMapping_tblEVOUserRole" Association="Self.FK_tblEVOUserRoleMapping_tblEVOUserRole">
+      <End Role="tblEVOUserRole" EntitySet="tblEVOUserRoles" />
+      <End Role="tblEVOUserRoleMapping" EntitySet="tblEVOUserRoleMappings" />
+    </AssociationSet>
+    <FunctionImport Name="fnGetEmailNotifiers" IsComposable="true" ReturnType="Collection(TDEVOV2Model.fnGetEmailNotifiers_Result)">
+      <Parameter Name="UserPackageId" Mode="In" Type="Int32" />
+      <Parameter Name="eventId" Mode="In" Type="Int32" />
+      <Parameter Name="filename" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="fnGetEventAdmins" IsComposable="true" ReturnType="Collection(TDEVOV2Model.fnGetEventAdmins_Result)">
+      <Parameter Name="eventId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="fnGetMediaInfobyEventId" IsComposable="true" ReturnType="Collection(TDEVOV2Model.fnGetMediaInfobyEventId_Result)">
+      <Parameter Name="eventId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="fnGetMediaStatistics" IsComposable="true" ReturnType="Collection(TDEVOV2Model.fnGetMediaStatistics_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="MediaId" Mode="In" Type="Int32" />
+      <Parameter Name="OffSet" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="fnGetUploadedMediaByUserPackageId" IsComposable="true" ReturnType="Collection(TDEVOV2Model.fnGetUploadedMediaByUserPackageId_Result)">
+      <Parameter Name="UserPackageId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="fnGetUserInfoByUserPackageId" IsComposable="true" ReturnType="Collection(TDEVOV2Model.fnGetUserInfoByUserPackageId_Result)">
+      <Parameter Name="UserPackageId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SplitString" IsComposable="true" ReturnType="Collection(TDEVOV2Model.SplitString_Result)">
+      <Parameter Name="Input" Mode="In" Type="String" />
+      <Parameter Name="Character" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ELMAH_GetErrorsXml" ReturnType="Collection(String)">
+      <Parameter Name="Application" Mode="In" Type="String" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="TotalCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ELMAH_GetErrorXml" ReturnType="Collection(String)">
+      <Parameter Name="Application" Mode="In" Type="String" />
+      <Parameter Name="ErrorId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="ELMAH_LogError">
+      <Parameter Name="ErrorId" Mode="In" Type="Guid" />
+      <Parameter Name="Application" Mode="In" Type="String" />
+      <Parameter Name="Host" Mode="In" Type="String" />
+      <Parameter Name="Type" Mode="In" Type="String" />
+      <Parameter Name="Source" Mode="In" Type="String" />
+      <Parameter Name="Message" Mode="In" Type="String" />
+      <Parameter Name="User" Mode="In" Type="String" />
+      <Parameter Name="AllXml" Mode="In" Type="String" />
+      <Parameter Name="StatusCode" Mode="In" Type="Int32" />
+      <Parameter Name="TimeUtc" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetPermission" ReturnType="Collection(String)">
+      <Parameter Name="PackageId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PROC_GetSessions">
+      <Parameter Name="SessionXml" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="procAddContactUs">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Company" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Subject" Mode="In" Type="String" />
+      <Parameter Name="Message" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="procAddFileQueueRecord" ReturnType="Collection(Int32)">
+      <Parameter Name="EventId" Mode="In" Type="Int32" />
+      <Parameter Name="MediaUploadType" Mode="In" Type="Int32" />
+      <Parameter Name="FilePath" Mode="In" Type="String" />
+      <Parameter Name="Environment" Mode="In" Type="String" />
+      <Parameter Name="FileName" Mode="In" Type="String" />
+      <Parameter Name="FileSize" Mode="In" Type="Decimal" />
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="procAddIPAddress" ReturnType="Collection(Int32)">
+      <Parameter Name="ipaddress" Mode="In" Type="String" />
+      <Parameter Name="countryCode" Mode="In" Type="String" />
+      <Parameter Name="countryName" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcAddRating" ReturnType="Collection(Decimal)">
+      <Parameter Name="MediaId" Mode="In" Type="Int32" />
+      <Parameter Name="count" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="procAddRecuringTransaction">
+      <Parameter Name="profileId" Mode="In" Type="String" />
+      <Parameter Name="pnref" Mode="In" Type="String" />
+      <Parameter Name="transResult" Mode="In" Type="String" />
+      <Parameter Name="processDate" Mode="In" Type="DateTime" />
+      <Parameter Name="nextBilling" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="procAddUserPackageBillingInfo">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Company" Mode="In" Type="String" />
+      <Parameter Name="EmailId" Mode="In" Type="String" />
+      <Parameter Name="Street" Mode="In" Type="String" />
+      <Parameter Name="Zip" Mode="In" Type="String" />
+      <Parameter Name="StateId" Mode="In" Type="Int32" />
+      <Parameter Name="CountryId" Mode="In" Type="Int32" />
+      <Parameter Name="CustCardNumber" Mode="In" Type="String" />
+      <Parameter Name="CardExpiryDate" Mode="In" Type="String" />
+      <Parameter Name="CardCvv" Mode="In" Type="String" />
+      <Parameter Name="BuyDate" Mode="In" Type="DateTime" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="procApproveChatMessage">
+      <Parameter Name="MessageId" Mode="In" Type="Int32" />
+      <Parameter Name="IsBroadcast" Mode="In" Type="Int32" />
+      <Parameter Name="SavedBy" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="procCanApplyPromoCode" ReturnType="Collection(Boolean)">
+      <Parameter Name="userPackageId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="procCancelSubscription">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="StatusCode" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="procCanclePurchaseOrderSubscription" ReturnType="Collection(Int32)">
+      <Parameter Name="UserPackageIds" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="procCheckCustomEventAccess" ReturnType="Collection(TDEVOV2Model.procCheckCustomEventAccess_Result)">
+      <Parameter Name="EventId" Mode="In" Type="Int32" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="AccessCode" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="procCheckMediaApprovalPending" ReturnType="Collection(TDEVOV2Model.procCheckMediaApprovalPending_Result)">
+      <Parameter Name="UserRoleMappingId" Mode="In" Type="Int32" />
+      <Parameter Name="MediaStatusId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="procCheckMediaFile" ReturnType="Collection(String)">
+      <Parameter Name="EventId" Mode="In" Type="Int32" />
+      <Parameter Name="FileName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="procClearCancellationOnHold">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="procCreateChat">
+      <Parameter Name="LibraryId" Mode="In" Type="Int32" />
+      <Parameter Name="EventId" Mode="In" Type="Int32" />
+      <Parameter Name="MediaId" Mode="In" Type="Int32" />
+      <Parameter Name="ChatType" Mode="In" Type="Int32" />
+      <Parameter Name="Message" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="ParentMessageId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="procCreateFollowMapping" ReturnType="Collection(Int32)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="procCreateNotification">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="EVOLibraryId" Mode="In" Type="Int32" />
+      <Parameter Name="EVONotificationTypeId" Mode="In" Type="Int32" />
+      <Parameter Name="EVOLibraryEventId" Mode="In" Type="Int32" />
+      <Parameter Name="HeadingText" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ExpirationDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="procCheckCustomEventAccess_Result">
+    <Property Type="Int32" Name="IsAccess" Nullable="true" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="EventId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="procCheckMediaApprovalPending_Result">
+    <Property Type="Int32" Name="RESULT_CODE" Nullable="true" />
+    <Property Type="Int32" Name="IS_MEDIA_PENDING" Nullable="true" />
+  </ComplexType>
+</Schema>
